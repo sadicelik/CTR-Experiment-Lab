@@ -1,0 +1,74 @@
+MODEL GENERATOR: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(1396615, 16)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=368, out_features=300, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.2, inplace=False)
+      (3): Linear(in_features=300, out_features=300, bias=True)
+      (4): ReLU()
+      (5): Dropout(p=0.2, inplace=False)
+      (6): Linear(in_features=300, out_features=300, bias=True)
+      (7): ReLU()
+      (8): Dropout(p=0.2, inplace=False)
+      (9): Linear(in_features=300, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+TRAIN:	 Epoch:   1 | BCE Loss: 0.41384 
+TRAIN:	 Epoch:   2 | BCE Loss: 0.40357 
+TRAIN:	 Epoch:   3 | BCE Loss: 0.39654 
+TRAIN:	 Epoch:   4 | BCE Loss: 0.38530 
+TRAIN:	 Epoch:   5 | BCE Loss: 0.36764 
+TRAIN:	 Epoch:   6 | BCE Loss: 0.34349 
+TRAIN:	 Epoch:   7 | BCE Loss: 0.31474 
+TRAIN:	 Epoch:   8 | BCE Loss: 0.28364 
+TRAIN:	 Epoch:   9 | BCE Loss: 0.25077 
+TRAIN:	 Epoch:  10 | BCE Loss: 0.21788 
+TRAIN:	 Epoch:  11 | BCE Loss: 0.18621 
+TRAIN:	 Epoch:  12 | BCE Loss: 0.15715 
+TRAIN:	 Epoch:  13 | BCE Loss: 0.13005 
+TRAIN:	 Epoch:  14 | BCE Loss: 0.10659 
+TRAIN:	 Epoch:  15 | BCE Loss: 0.08598 
+TRAIN:	 Epoch:  16 | BCE Loss: 0.06920 
+TRAIN:	 Epoch:  17 | BCE Loss: 0.05470 
+TRAIN:	 Epoch:  18 | BCE Loss: 0.04340 
+TRAIN:	 Epoch:  19 | BCE Loss: 0.03436 
+TRAIN:	 Epoch:  20 | BCE Loss: 0.02709 
+TRAIN:	 Epoch:  21 | BCE Loss: 0.02127 
+TRAIN:	 Epoch:  22 | BCE Loss: 0.01684 
+TRAIN:	 Epoch:  23 | BCE Loss: 0.01318 
+TRAIN:	 Epoch:  24 | BCE Loss: 0.01065 
+TRAIN:	 Epoch:  25 | BCE Loss: 0.00882 
+TRAIN:	 Epoch:  26 | BCE Loss: 0.00726 
+TRAIN:	 Epoch:  27 | BCE Loss: 0.00574 
+TRAIN:	 Epoch:  28 | BCE Loss: 0.00491 
+TRAIN:	 Epoch:  29 | BCE Loss: 0.00388 
+TRAIN:	 Epoch:  30 | BCE Loss: 0.00362 
+TRAIN:	 Epoch:  31 | BCE Loss: 0.00308 
+TRAIN:	 Epoch:  32 | BCE Loss: 0.00269 
+TRAIN:	 Epoch:  33 | BCE Loss: 0.00228 
+TRAIN:	 Epoch:  34 | BCE Loss: 0.00208 
+TRAIN:	 Epoch:  35 | BCE Loss: 0.00181 
+TRAIN:	 Epoch:  36 | BCE Loss: 0.00163 
+TRAIN:	 Epoch:  37 | BCE Loss: 0.00139 
+TRAIN:	 Epoch:  38 | BCE Loss: 0.00131 
+TRAIN:	 Epoch:  39 | BCE Loss: 0.00118 
+TRAIN:	 Epoch:  40 | BCE Loss: 0.00114 
+TRAIN:	 Epoch:  41 | BCE Loss: 0.00103 
+TRAIN:	 Epoch:  42 | BCE Loss: 0.00097 
+TRAIN:	 Epoch:  43 | BCE Loss: 0.00091 
+TRAIN:	 Epoch:  44 | BCE Loss: 0.00084 
+TRAIN:	 Epoch:  45 | BCE Loss: 0.00083 
+TRAIN:	 Epoch:  46 | BCE Loss: 0.00072 
+TRAIN:	 Epoch:  47 | BCE Loss: 0.00075 
+TRAIN:	 Epoch:  48 | BCE Loss: 0.00066 
+TRAIN:	 Epoch:  49 | BCE Loss: 0.00056 
+TRAIN:	 Epoch:  50 | BCE Loss: 0.00067 
+###################-FINISHED TRAINING-###################
+###################-STARTED TESTING-###################
+TEST:	 BCE Loss: 11.12915 | ROC AUC: 0.54018 | Accuracy: 0.81241
+###################-FINISHED TESTING-###################

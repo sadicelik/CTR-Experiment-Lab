@@ -1,0 +1,37 @@
+MODEL GENERATOR: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(1396591, 123)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=2706, out_features=512, bias=True)
+      (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.36, inplace=False)
+      (4): Linear(in_features=512, out_features=256, bias=True)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.36, inplace=False)
+      (8): Linear(in_features=256, out_features=128, bias=True)
+      (9): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.36, inplace=False)
+      (12): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+TRAIN:	 Epoch:   1 | BCE Loss: 0.41613 
+TRAIN:	 Epoch:   2 | BCE Loss: 0.40037 
+TRAIN:	 Epoch:   3 | BCE Loss: 0.37246 
+TRAIN:	 Epoch:   4 | BCE Loss: 0.30031 
+TRAIN:	 Epoch:   5 | BCE Loss: 0.20922 
+TRAIN:	 Epoch:   6 | BCE Loss: 0.13072 
+TRAIN:	 Epoch:   7 | BCE Loss: 0.07455 
+TRAIN:	 Epoch:   8 | BCE Loss: 0.03974 
+TRAIN:	 Epoch:   9 | BCE Loss: 0.02011 
+TRAIN:	 Epoch:  10 | BCE Loss: 0.01045 
+###################-FINISHED TRAINING-###################
+###################-STARTED TESTING-###################
+TEST:	 BCE Loss: 2.91719 | ROC AUC: 0.51219 | Accuracy: 0.65243
+###################-FINISHED TESTING-###################

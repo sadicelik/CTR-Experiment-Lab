@@ -1,0 +1,37 @@
+A new study created in RDB with name: Avazu-DeepEmbed-Hyperparameter-Tuning-20251013150405
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 4)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=84, out_features=350, bias=True)
+      (1): BatchNorm1d(350, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.4611333204282192, inplace=False)
+      (4): Linear(in_features=350, out_features=215, bias=True)
+      (5): BatchNorm1d(215, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.4611333204282192, inplace=False)
+      (8): Linear(in_features=215, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+Trial 0 failed with parameters: {'n_layers': 2, 'hidden_dim_0': 350, 'hidden_dim_1': 215, 'embed_dim': 4, 'dropout': 0.4611333204282192, 'optimizer': 'Adam', 'learning_rate': 0.00043957229625668845, 'epochs': 19, 'batch_size': 512} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "c:\ProgramData\anaconda3\envs\ctrpredenv\Lib\site-packages\optuna\study\_optimize.py", line 201, in _run_trial
+    value_or_values = func(trial)
+  File "d:\Development\Projects\ctr-prediction\src\trainer\optuna_tuner.py", line 150, in objective
+    epoch_loss = self._train_one_epoch(train_loader)
+  File "d:\Development\Projects\ctr-prediction\src\trainer\optuna_tuner.py", line 170, in _train_one_epoch
+    for _, (x_train_batch, y_train_batch) in enumerate(train_loader):
+                                             ~~~~~~~~~^^^^^^^^^^^^^^
+  File "c:\ProgramData\anaconda3\envs\ctrpredenv\Lib\site-packages\torch\utils\data\dataloader.py", line 730, in __next__
+    with torch.autograd.profiler.record_function(self._profile_name):
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "c:\ProgramData\anaconda3\envs\ctrpredenv\Lib\site-packages\torch\autograd\profiler.py", line 781, in __exit__
+    def __exit__(self, exc_type: Any, exc_value: Any, traceback: Any):
+    
+KeyboardInterrupt
+Trial 0 failed with value None.

@@ -1,0 +1,39 @@
+MODEL GENERATOR: PyTorch: FINT(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(1396591, 16)
+  )
+  (fint_block): FieldAwareInteractionBlock(
+    (layers): ModuleList(
+      (0-2): 3 x FieldAwareInteractionLayer(
+        (proj): Linear(in_features=23, out_features=22, bias=False)
+      )
+    )
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=352, out_features=300, bias=True)
+      (1): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.2, inplace=False)
+      (4): Linear(in_features=300, out_features=300, bias=True)
+      (5): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.2, inplace=False)
+      (8): Linear(in_features=300, out_features=300, bias=True)
+      (9): BatchNorm1d(300, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.2, inplace=False)
+      (12): Linear(in_features=300, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+TRAIN:	 Epoch:   1 | BCE Loss: 0.41905 
+TRAIN:	 Epoch:   2 | BCE Loss: 0.40534 
+TRAIN:	 Epoch:   3 | BCE Loss: 0.39941 
+TRAIN:	 Epoch:   4 | BCE Loss: 0.39070 
+TRAIN:	 Epoch:   5 | BCE Loss: 0.37593 
+###################-FINISHED TRAINING-###################
+###################-STARTED TESTING-###################
+TEST:	 BCE Loss: 0.53714 | ROC AUC: 0.49705 | Accuracy: 0.81698
+###################-FINISHED TESTING-###################

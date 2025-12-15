@@ -1,0 +1,61 @@
+MODEL GENERATOR: PyTorch: LogisticRegression(
+  (linear): LinearLayer(
+    (fc): Embedding(1396807, 1)
+  )
+)
+###################-STARTED TRAINING-###################
+TRAIN:	 Epoch:   1 | BCE Loss: 0.89900 
+TRAIN:	 Epoch:   2 | BCE Loss: 0.60579 
+TRAIN:	 Epoch:   3 | BCE Loss: 0.53871 
+TRAIN:	 Epoch:   4 | BCE Loss: 0.50522 
+TRAIN:	 Epoch:   5 | BCE Loss: 0.48233 
+TRAIN:	 Epoch:   6 | BCE Loss: 0.46387 
+TRAIN:	 Epoch:   7 | BCE Loss: 0.44780 
+TRAIN:	 Epoch:   8 | BCE Loss: 0.43336 
+TRAIN:	 Epoch:   9 | BCE Loss: 0.41986 
+TRAIN:	 Epoch:  10 | BCE Loss: 0.40722 
+TRAIN:	 Epoch:  11 | BCE Loss: 0.39517 
+TRAIN:	 Epoch:  12 | BCE Loss: 0.38372 
+TRAIN:	 Epoch:  13 | BCE Loss: 0.37278 
+TRAIN:	 Epoch:  14 | BCE Loss: 0.36218 
+TRAIN:	 Epoch:  15 | BCE Loss: 0.35206 
+TRAIN:	 Epoch:  16 | BCE Loss: 0.34229 
+TRAIN:	 Epoch:  17 | BCE Loss: 0.33283 
+TRAIN:	 Epoch:  18 | BCE Loss: 0.32374 
+TRAIN:	 Epoch:  19 | BCE Loss: 0.31496 
+TRAIN:	 Epoch:  20 | BCE Loss: 0.30648 
+TRAIN:	 Epoch:  21 | BCE Loss: 0.29828 
+TRAIN:	 Epoch:  22 | BCE Loss: 0.29036 
+TRAIN:	 Epoch:  23 | BCE Loss: 0.28270 
+TRAIN:	 Epoch:  24 | BCE Loss: 0.27529 
+TRAIN:	 Epoch:  25 | BCE Loss: 0.26816 
+TRAIN:	 Epoch:  26 | BCE Loss: 0.26122 
+TRAIN:	 Epoch:  27 | BCE Loss: 0.25452 
+TRAIN:	 Epoch:  28 | BCE Loss: 0.24807 
+TRAIN:	 Epoch:  29 | BCE Loss: 0.24180 
+TRAIN:	 Epoch:  30 | BCE Loss: 0.23575 
+TRAIN:	 Epoch:  31 | BCE Loss: 0.22993 
+TRAIN:	 Epoch:  32 | BCE Loss: 0.22425 
+TRAIN:	 Epoch:  33 | BCE Loss: 0.21877 
+TRAIN:	 Epoch:  34 | BCE Loss: 0.21347 
+TRAIN:	 Epoch:  35 | BCE Loss: 0.20833 
+TRAIN:	 Epoch:  36 | BCE Loss: 0.20335 
+TRAIN:	 Epoch:  37 | BCE Loss: 0.19855 
+TRAIN:	 Epoch:  38 | BCE Loss: 0.19389 
+TRAIN:	 Epoch:  39 | BCE Loss: 0.18936 
+TRAIN:	 Epoch:  40 | BCE Loss: 0.18499 
+TRAIN:	 Epoch:  41 | BCE Loss: 0.18080 
+TRAIN:	 Epoch:  42 | BCE Loss: 0.17669 
+TRAIN:	 Epoch:  43 | BCE Loss: 0.17273 
+TRAIN:	 Epoch:  44 | BCE Loss: 0.16887 
+TRAIN:	 Epoch:  45 | BCE Loss: 0.16513 
+TRAIN:	 Epoch:  46 | BCE Loss: 0.16151 
+TRAIN:	 Epoch:  47 | BCE Loss: 0.15803 
+TRAIN:	 Epoch:  48 | BCE Loss: 0.15463 
+TRAIN:	 Epoch:  49 | BCE Loss: 0.15129 
+TRAIN:	 Epoch:  50 | BCE Loss: 0.14809 
+###################-FINISHED TRAINING-###################
+###################-STARTED TESTING-###################
+TEST:	 BCE Loss: 0.82603 | ROC AUC: 0.49182 | Accuracy: 0.73073
+###################-FINISHED TESTING-###################
+Execution Time 21m 9.9s ==> parse_hour=False, embedding all features

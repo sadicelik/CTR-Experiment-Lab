@@ -1,0 +1,15 @@
+MODEL GENERATOR: PyTorch: LogisticRegression(
+  (linear): LinearLayer(
+    (fc): Embedding(1396807, 1)
+  )
+)
+###################-STARTED TRAINING-###################
+TRAIN:	 Epoch:   1 | BCE Loss: 0.89900 
+TRAIN:	 Epoch:   2 | BCE Loss: 0.60579 
+TRAIN:	 Epoch:   3 | BCE Loss: 0.53871 
+TRAIN:	 Epoch:   4 | BCE Loss: 0.50522 
+TRAIN:	 Epoch:   5 | BCE Loss: 0.48233 
+###################-FINISHED TRAINING-###################
+###################-STARTED TESTING-###################
+TEST:	 BCE Loss: 0.80065 | ROC AUC: 0.46739 | Accuracy: 0.79322
+###################-FINISHED TESTING-###################

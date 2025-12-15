@@ -1,0 +1,2049 @@
+A new study created in RDB with name: Avazu-DeepEmbed-Hyperparameter-Tuning-20251009132534
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 123)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=2583, out_features=39, bias=True)
+      (1): BatchNorm1d(39, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.08851000862002267, inplace=False)
+      (4): Linear(in_features=39, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41713
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39311
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.34314
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.26028
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.19881
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.16788
+###################-FINISHED TRAINING-###################
+Trial 0 finished with value: 0.1678758277344974 and parameters: {'n_layers': 1, 'hidden_dim_0': 39, 'embed_dim': 123, 'dropout': 0.08851000862002267, 'optimizer': 'Adam', 'learning_rate': 0.002427192983442803, 'epochs': 6, 'batch_size': 2048}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 4)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=84, out_features=290, bias=True)
+      (1): BatchNorm1d(290, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.20616197744414422, inplace=False)
+      (4): Linear(in_features=290, out_features=342, bias=True)
+      (5): BatchNorm1d(342, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.20616197744414422, inplace=False)
+      (8): Linear(in_features=342, out_features=342, bias=True)
+      (9): BatchNorm1d(342, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.20616197744414422, inplace=False)
+      (12): Linear(in_features=342, out_features=66, bias=True)
+      (13): BatchNorm1d(66, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.20616197744414422, inplace=False)
+      (16): Linear(in_features=66, out_features=257, bias=True)
+      (17): BatchNorm1d(257, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.20616197744414422, inplace=False)
+      (20): Linear(in_features=257, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.43593
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.42041
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.41590
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.41326
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.41179
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.40988
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.40864
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.40773
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.40672
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.40600
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.40524
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.40474
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.40387
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.40349
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.40282
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.40237
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.40183
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.40149
+###################-FINISHED TRAINING-###################
+Trial 1 finished with value: 0.40149055590888966 and parameters: {'n_layers': 5, 'hidden_dim_0': 290, 'hidden_dim_1': 342, 'hidden_dim_2': 342, 'hidden_dim_3': 66, 'hidden_dim_4': 257, 'embed_dim': 4, 'dropout': 0.20616197744414422, 'optimizer': 'Adam', 'learning_rate': 7.768930166627069e-05, 'epochs': 18, 'batch_size': 256}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 14)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=294, out_features=125, bias=True)
+      (1): BatchNorm1d(125, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.10126745976711204, inplace=False)
+      (4): Linear(in_features=125, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41570
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40347
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.39859
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.39251
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.38447
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.37386
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.36143
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.34730
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.33223
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.31650
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.30035
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.28411
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.26825
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.25276
+###################-FINISHED TRAINING-###################
+Trial 2 finished with value: 0.25275595785378935 and parameters: {'n_layers': 1, 'hidden_dim_0': 125, 'embed_dim': 14, 'dropout': 0.10126745976711204, 'optimizer': 'Adam', 'learning_rate': 0.0009077541365407229, 'epochs': 14, 'batch_size': 512}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 5)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=105, out_features=196, bias=True)
+      (1): BatchNorm1d(196, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.28176523700535133, inplace=False)
+      (4): Linear(in_features=196, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.42221
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40981
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.40619
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.40332
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.39964
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.39437
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.38751
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.37886
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.36866
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.35699
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.34422
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.33089
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.31712
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.30331
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.28985
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.27694
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.26440
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.25243
+OPTUNA TUNER: TRAIN:	 Epoch:  19 | BCE Loss: 0.24169
+###################-FINISHED TRAINING-###################
+Trial 3 finished with value: 0.24168915834792498 and parameters: {'n_layers': 1, 'hidden_dim_0': 196, 'embed_dim': 5, 'dropout': 0.28176523700535133, 'optimizer': 'Adam', 'learning_rate': 0.001391159307318321, 'epochs': 19, 'batch_size': 2048}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 8)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=168, out_features=358, bias=True)
+      (1): BatchNorm1d(358, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.2606283485057801, inplace=False)
+      (4): Linear(in_features=358, out_features=40, bias=True)
+      (5): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.2606283485057801, inplace=False)
+      (8): Linear(in_features=40, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.57147
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.50909
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.47383
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.45282
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.43991
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.43132
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.42607
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.42251
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.42049
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.41845
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.41717
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.41611
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.41531
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.41470
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.41391
+###################-FINISHED TRAINING-###################
+Trial 4 finished with value: 0.41391276818094624 and parameters: {'n_layers': 2, 'hidden_dim_0': 358, 'hidden_dim_1': 40, 'embed_dim': 8, 'dropout': 0.2606283485057801, 'optimizer': 'Adam', 'learning_rate': 6.319586321947978e-05, 'epochs': 15, 'batch_size': 4096}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 5)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=105, out_features=65, bias=True)
+      (1): BatchNorm1d(65, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3488769508010165, inplace=False)
+      (4): Linear(in_features=65, out_features=81, bias=True)
+      (5): BatchNorm1d(81, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.3488769508010165, inplace=False)
+      (8): Linear(in_features=81, out_features=141, bias=True)
+      (9): BatchNorm1d(141, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.3488769508010165, inplace=False)
+      (12): Linear(in_features=141, out_features=63, bias=True)
+      (13): BatchNorm1d(63, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.3488769508010165, inplace=False)
+      (16): Linear(in_features=63, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.48905
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.43525
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.42835
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.42383
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.42093
+###################-FINISHED TRAINING-###################
+Trial 5 finished with value: 0.42092693703216755 and parameters: {'n_layers': 4, 'hidden_dim_0': 65, 'hidden_dim_1': 81, 'hidden_dim_2': 141, 'hidden_dim_3': 63, 'embed_dim': 5, 'dropout': 0.3488769508010165, 'optimizer': 'Adam', 'learning_rate': 0.0005080961868376984, 'epochs': 5, 'batch_size': 4096}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 11)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=231, out_features=60, bias=True)
+      (1): BatchNorm1d(60, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.46319371092387696, inplace=False)
+      (4): Linear(in_features=60, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.65296
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.49310
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.44672
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.43278
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.42768
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.42500
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.42282
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.42168
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.42039
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.41892
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.41797
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.41715
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.41625
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.41575
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.41489
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.41468
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.41402
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.41360
+OPTUNA TUNER: TRAIN:	 Epoch:  19 | BCE Loss: 0.41297
+###################-FINISHED TRAINING-###################
+Trial 6 finished with value: 0.4129703534994109 and parameters: {'n_layers': 1, 'hidden_dim_0': 60, 'embed_dim': 11, 'dropout': 0.46319371092387696, 'optimizer': 'Adam', 'learning_rate': 4.117434417636005e-05, 'epochs': 19, 'batch_size': 1024}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 71)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=1491, out_features=61, bias=True)
+      (1): BatchNorm1d(61, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.46869377970166737, inplace=False)
+      (4): Linear(in_features=61, out_features=68, bias=True)
+      (5): BatchNorm1d(68, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.46869377970166737, inplace=False)
+      (8): Linear(in_features=68, out_features=323, bias=True)
+      (9): BatchNorm1d(323, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.46869377970166737, inplace=False)
+      (12): Linear(in_features=323, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.44308
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.41615
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.41061
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.40725
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.40438
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.40075
+###################-FINISHED TRAINING-###################
+Trial 7 finished with value: 0.40075267931983233 and parameters: {'n_layers': 3, 'hidden_dim_0': 61, 'hidden_dim_1': 68, 'hidden_dim_2': 323, 'embed_dim': 71, 'dropout': 0.46869377970166737, 'optimizer': 'Adam', 'learning_rate': 0.0004836770532939141, 'epochs': 6, 'batch_size': 2048}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 84)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=1764, out_features=32, bias=True)
+      (1): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.33570415941495735, inplace=False)
+      (4): Linear(in_features=32, out_features=147, bias=True)
+      (5): BatchNorm1d(147, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.33570415941495735, inplace=False)
+      (8): Linear(in_features=147, out_features=70, bias=True)
+      (9): BatchNorm1d(70, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.33570415941495735, inplace=False)
+      (12): Linear(in_features=70, out_features=95, bias=True)
+      (13): BatchNorm1d(95, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.33570415941495735, inplace=False)
+      (16): Linear(in_features=95, out_features=408, bias=True)
+      (17): BatchNorm1d(408, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.33570415941495735, inplace=False)
+      (20): Linear(in_features=408, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.55839
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.44436
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.43270
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.42785
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.42476
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.42213
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.42058
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.41927
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.41790
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.41676
+###################-FINISHED TRAINING-###################
+Trial 8 finished with value: 0.41676405614664225 and parameters: {'n_layers': 5, 'hidden_dim_0': 32, 'hidden_dim_1': 147, 'hidden_dim_2': 70, 'hidden_dim_3': 95, 'hidden_dim_4': 408, 'embed_dim': 84, 'dropout': 0.33570415941495735, 'optimizer': 'Adam', 'learning_rate': 2.0240357177787123e-05, 'epochs': 10, 'batch_size': 1024}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 27)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=567, out_features=101, bias=True)
+      (1): BatchNorm1d(101, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.024322430156313468, inplace=False)
+      (4): Linear(in_features=101, out_features=409, bias=True)
+      (5): BatchNorm1d(409, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.024322430156313468, inplace=False)
+      (8): Linear(in_features=409, out_features=156, bias=True)
+      (9): BatchNorm1d(156, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.024322430156313468, inplace=False)
+      (12): Linear(in_features=156, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41177
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39971
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.39003
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.36860
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.33474
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.29546
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.25746
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.22410
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.19590
+###################-FINISHED TRAINING-###################
+Trial 9 finished with value: 0.19590174648858236 and parameters: {'n_layers': 3, 'hidden_dim_0': 101, 'hidden_dim_1': 409, 'hidden_dim_2': 156, 'embed_dim': 27, 'dropout': 0.024322430156313468, 'optimizer': 'Adam', 'learning_rate': 0.0019884949813531237, 'epochs': 9, 'batch_size': 2048}. Best is trial 0 with value: 0.1678758277344974.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 44)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=924, out_features=33, bias=True)
+      (1): BatchNorm1d(33, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.13175527595249076, inplace=False)
+      (4): Linear(in_features=33, out_features=189, bias=True)
+      (5): BatchNorm1d(189, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.13175527595249076, inplace=False)
+      (8): Linear(in_features=189, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40678
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.34124
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.21505
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.17534
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.15800
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.14699
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.13938
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13432
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12942
+###################-FINISHED TRAINING-###################
+Trial 10 finished with value: 0.1294201104447841 and parameters: {'n_layers': 2, 'hidden_dim_0': 33, 'hidden_dim_1': 189, 'embed_dim': 44, 'dropout': 0.13175527595249076, 'optimizer': 'Adam', 'learning_rate': 0.009655967896009655, 'epochs': 9, 'batch_size': 256}. Best is trial 10 with value: 0.1294201104447841.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 40)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=840, out_features=33, bias=True)
+      (1): BatchNorm1d(33, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.13557678447334856, inplace=False)
+      (4): Linear(in_features=33, out_features=198, bias=True)
+      (5): BatchNorm1d(198, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.13557678447334856, inplace=False)
+      (8): Linear(in_features=198, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40757
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.36399
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.24453
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.18674
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.16347
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.15030
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.14098
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13398
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12868
+###################-FINISHED TRAINING-###################
+Trial 11 finished with value: 0.12867737912277255 and parameters: {'n_layers': 2, 'hidden_dim_0': 33, 'hidden_dim_1': 198, 'embed_dim': 40, 'dropout': 0.13557678447334856, 'optimizer': 'Adam', 'learning_rate': 0.006802224225522237, 'epochs': 9, 'batch_size': 256}. Best is trial 11 with value: 0.12867737912277255.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 33)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=693, out_features=44, bias=True)
+      (1): BatchNorm1d(44, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.15699822874478325, inplace=False)
+      (4): Linear(in_features=44, out_features=192, bias=True)
+      (5): BatchNorm1d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.15699822874478325, inplace=False)
+      (8): Linear(in_features=192, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40748
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.37310
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.26443
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.19613
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.16854
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.15356
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.14436
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13763
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13302
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12916
+###################-FINISHED TRAINING-###################
+Trial 12 finished with value: 0.12916086992535544 and parameters: {'n_layers': 2, 'hidden_dim_0': 44, 'hidden_dim_1': 192, 'embed_dim': 33, 'dropout': 0.15699822874478325, 'optimizer': 'Adam', 'learning_rate': 0.006448477394497233, 'epochs': 10, 'batch_size': 256}. Best is trial 11 with value: 0.12867737912277255.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 29)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=609, out_features=47, bias=True)
+      (1): BatchNorm1d(47, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.18298391375703355, inplace=False)
+      (4): Linear(in_features=47, out_features=235, bias=True)
+      (5): BatchNorm1d(235, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.18298391375703355, inplace=False)
+      (8): Linear(in_features=235, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40806
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.37213
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.25659
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.19046
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.16596
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.15224
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.14402
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13734
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13330
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12911
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.12604
+###################-FINISHED TRAINING-###################
+Trial 13 finished with value: 0.1260374992675709 and parameters: {'n_layers': 2, 'hidden_dim_0': 47, 'hidden_dim_1': 235, 'embed_dim': 29, 'dropout': 0.18298391375703355, 'optimizer': 'Adam', 'learning_rate': 0.007619054616250198, 'epochs': 11, 'batch_size': 256}. Best is trial 13 with value: 0.1260374992675709.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 19)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=399, out_features=88, bias=True)
+      (1): BatchNorm1d(88, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.0032776040374264404, inplace=False)
+      (4): Linear(in_features=88, out_features=302, bias=True)
+      (5): BatchNorm1d(302, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.0032776040374264404, inplace=False)
+      (8): Linear(in_features=302, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40757
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.38907
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.33463
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.26049
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.20246
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.16613
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.14474
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13129
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12193
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.11475
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.10885
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.10362
+###################-FINISHED TRAINING-###################
+Trial 14 finished with value: 0.10362384112185204 and parameters: {'n_layers': 2, 'hidden_dim_0': 88, 'hidden_dim_1': 302, 'embed_dim': 19, 'dropout': 0.0032776040374264404, 'optimizer': 'Adam', 'learning_rate': 0.004001772562377527, 'epochs': 12, 'batch_size': 256}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 17)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=357, out_features=91, bias=True)
+      (1): BatchNorm1d(91, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.013043195941565, inplace=False)
+      (4): Linear(in_features=91, out_features=309, bias=True)
+      (5): BatchNorm1d(309, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.013043195941565, inplace=False)
+      (8): Linear(in_features=309, out_features=38, bias=True)
+      (9): BatchNorm1d(38, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.013043195941565, inplace=False)
+      (12): Linear(in_features=38, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40768
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39416
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.36140
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.30440
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.24660
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.20194
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.17072
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.15018
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13613
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12666
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11966
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.11435
+###################-FINISHED TRAINING-###################
+Trial 15 finished with value: 0.11435408787116783 and parameters: {'n_layers': 3, 'hidden_dim_0': 91, 'hidden_dim_1': 309, 'hidden_dim_2': 38, 'embed_dim': 17, 'dropout': 0.013043195941565, 'optimizer': 'Adam', 'learning_rate': 0.003229992686776327, 'epochs': 12, 'batch_size': 256}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 18)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=378, out_features=94, bias=True)
+      (1): BatchNorm1d(94, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.006140853262700254, inplace=False)
+      (4): Linear(in_features=94, out_features=498, bias=True)
+      (5): BatchNorm1d(498, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.006140853262700254, inplace=False)
+      (8): Linear(in_features=498, out_features=32, bias=True)
+      (9): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.006140853262700254, inplace=False)
+      (12): Linear(in_features=32, out_features=357, bias=True)
+      (13): BatchNorm1d(357, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.006140853262700254, inplace=False)
+      (16): Linear(in_features=357, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41650
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40377
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.40031
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.39737
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.39488
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.39244
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.38993
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.38736
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.38443
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.38174
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.37855
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.37552
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.37234
+###################-FINISHED TRAINING-###################
+Trial 16 finished with value: 0.37234144940337593 and parameters: {'n_layers': 4, 'hidden_dim_0': 94, 'hidden_dim_1': 498, 'hidden_dim_2': 32, 'hidden_dim_3': 357, 'embed_dim': 18, 'dropout': 0.006140853262700254, 'optimizer': 'Adam', 'learning_rate': 0.00016384581960089459, 'epochs': 13, 'batch_size': 512}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 8)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=168, out_features=169, bias=True)
+      (1): BatchNorm1d(169, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.0579288213959936, inplace=False)
+      (4): Linear(in_features=169, out_features=292, bias=True)
+      (5): BatchNorm1d(292, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.0579288213959936, inplace=False)
+      (8): Linear(in_features=292, out_features=32, bias=True)
+      (9): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.0579288213959936, inplace=False)
+      (12): Linear(in_features=32, out_features=383, bias=True)
+      (13): BatchNorm1d(383, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.0579288213959936, inplace=False)
+      (16): Linear(in_features=383, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41142
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39880
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.37777
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.34008
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.29649
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.25463
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.21888
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.19068
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.16961
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.15400
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.14320
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.13489
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.12846
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.12376
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.12001
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.11704
+###################-FINISHED TRAINING-###################
+Trial 17 finished with value: 0.1170439317149134 and parameters: {'n_layers': 4, 'hidden_dim_0': 169, 'hidden_dim_1': 292, 'hidden_dim_2': 32, 'hidden_dim_3': 383, 'embed_dim': 8, 'dropout': 0.0579288213959936, 'optimizer': 'Adam', 'learning_rate': 0.0033280068009662674, 'epochs': 16, 'batch_size': 256}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 18)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=378, out_features=83, bias=True)
+      (1): BatchNorm1d(83, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.008813526853566577, inplace=False)
+      (4): Linear(in_features=83, out_features=116, bias=True)
+      (5): BatchNorm1d(116, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.008813526853566577, inplace=False)
+      (8): Linear(in_features=116, out_features=70, bias=True)
+      (9): BatchNorm1d(70, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.008813526853566577, inplace=False)
+      (12): Linear(in_features=70, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41133
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40125
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.39538
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.38745
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.37637
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.36241
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.34604
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.32821
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.30902
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.28948
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.27027
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.25164
+###################-FINISHED TRAINING-###################
+Trial 18 finished with value: 0.25163930830619186 and parameters: {'n_layers': 3, 'hidden_dim_0': 83, 'hidden_dim_1': 116, 'hidden_dim_2': 70, 'embed_dim': 18, 'dropout': 0.008813526853566577, 'optimizer': 'Adam', 'learning_rate': 0.0008768593686067684, 'epochs': 12, 'batch_size': 256}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 9)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=189, out_features=158, bias=True)
+      (1): BatchNorm1d(158, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.09643868849119927, inplace=False)
+      (4): Linear(in_features=158, out_features=506, bias=True)
+      (5): BatchNorm1d(506, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.09643868849119927, inplace=False)
+      (8): Linear(in_features=506, out_features=60, bias=True)
+      (9): BatchNorm1d(60, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.09643868849119927, inplace=False)
+      (12): Linear(in_features=60, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.42420
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40858
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.40513
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.40282
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.40100
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.39925
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.39758
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.39593
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.39431
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.39283
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.39126
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.38980
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.38772
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.38608
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.38425
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.38255
+###################-FINISHED TRAINING-###################
+Trial 19 finished with value: 0.3825463983847196 and parameters: {'n_layers': 3, 'hidden_dim_0': 158, 'hidden_dim_1': 506, 'hidden_dim_2': 60, 'embed_dim': 9, 'dropout': 0.09643868849119927, 'optimizer': 'Adam', 'learning_rate': 0.00019496257049207195, 'epochs': 16, 'batch_size': 256}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 22)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=462, out_features=237, bias=True)
+      (1): BatchNorm1d(237, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.04933718652866531, inplace=False)
+      (4): Linear(in_features=237, out_features=293, bias=True)
+      (5): BatchNorm1d(293, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.04933718652866531, inplace=False)
+      (8): Linear(in_features=293, out_features=55, bias=True)
+      (9): BatchNorm1d(55, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.04933718652866531, inplace=False)
+      (12): Linear(in_features=55, out_features=35, bias=True)
+      (13): BatchNorm1d(35, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.04933718652866531, inplace=False)
+      (16): Linear(in_features=35, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41445
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40008
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.38707
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.35462
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.30411
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.25177
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.20795
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.17627
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.15458
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.14025
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.12991
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.12251
+###################-FINISHED TRAINING-###################
+Trial 20 finished with value: 0.12250626528839957 and parameters: {'n_layers': 4, 'hidden_dim_0': 237, 'hidden_dim_1': 293, 'hidden_dim_2': 55, 'hidden_dim_3': 35, 'embed_dim': 22, 'dropout': 0.04933718652866531, 'optimizer': 'Adam', 'learning_rate': 0.0037935184405488926, 'epochs': 12, 'batch_size': 4096}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 7)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=147, out_features=137, bias=True)
+      (1): BatchNorm1d(137, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.056547550306195314, inplace=False)
+      (4): Linear(in_features=137, out_features=288, bias=True)
+      (5): BatchNorm1d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.056547550306195314, inplace=False)
+      (8): Linear(in_features=288, out_features=32, bias=True)
+      (9): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.056547550306195314, inplace=False)
+      (12): Linear(in_features=32, out_features=472, bias=True)
+      (13): BatchNorm1d(472, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.056547550306195314, inplace=False)
+      (16): Linear(in_features=472, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41220
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39955
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.38187
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.34867
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.30833
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.26844
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.23304
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.20331
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.18045
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.16335
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.15051
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.14091
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.13388
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.12852
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.12427
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.12128
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.11839
+###################-FINISHED TRAINING-###################
+Trial 21 finished with value: 0.1183897862308875 and parameters: {'n_layers': 4, 'hidden_dim_0': 137, 'hidden_dim_1': 288, 'hidden_dim_2': 32, 'hidden_dim_3': 472, 'embed_dim': 7, 'dropout': 0.056547550306195314, 'optimizer': 'Adam', 'learning_rate': 0.0033254703390713744, 'epochs': 17, 'batch_size': 256}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 13)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=273, out_features=480, bias=True)
+      (1): BatchNorm1d(480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.04396213300422768, inplace=False)
+      (4): Linear(in_features=480, out_features=348, bias=True)
+      (5): BatchNorm1d(348, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.04396213300422768, inplace=False)
+      (8): Linear(in_features=348, out_features=43, bias=True)
+      (9): BatchNorm1d(43, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.04396213300422768, inplace=False)
+      (12): Linear(in_features=43, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40785
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39342
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.35236
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.28907
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.23137
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.18903
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.16130
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.14410
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13239
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12467
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11827
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.11351
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10905
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10530
+###################-FINISHED TRAINING-###################
+Trial 22 finished with value: 0.10530079250651718 and parameters: {'n_layers': 3, 'hidden_dim_0': 480, 'hidden_dim_1': 348, 'hidden_dim_2': 43, 'embed_dim': 13, 'dropout': 0.04396213300422768, 'optimizer': 'Adam', 'learning_rate': 0.0038691123816759587, 'epochs': 14, 'batch_size': 256}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 14)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=294, out_features=407, bias=True)
+      (1): BatchNorm1d(407, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.059945913574503344, inplace=False)
+      (4): Linear(in_features=407, out_features=382, bias=True)
+      (5): BatchNorm1d(382, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.059945913574503344, inplace=False)
+      (8): Linear(in_features=382, out_features=48, bias=True)
+      (9): BatchNorm1d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.059945913574503344, inplace=False)
+      (12): Linear(in_features=48, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41144
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40112
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.39393
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.38230
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.36650
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.34743
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.32606
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.30318
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.28028
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.25824
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.23673
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.21732
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.19931
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.18370
+###################-FINISHED TRAINING-###################
+Trial 23 finished with value: 0.1837004185098197 and parameters: {'n_layers': 3, 'hidden_dim_0': 407, 'hidden_dim_1': 382, 'hidden_dim_2': 48, 'embed_dim': 14, 'dropout': 0.059945913574503344, 'optimizer': 'Adam', 'learning_rate': 0.0011377431903255208, 'epochs': 14, 'batch_size': 256}. Best is trial 14 with value: 0.10362384112185204.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 14)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=294, out_features=479, bias=True)
+      (1): BatchNorm1d(479, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.008838163280266827, inplace=False)
+      (4): Linear(in_features=479, out_features=130, bias=True)
+      (5): BatchNorm1d(130, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.008838163280266827, inplace=False)
+      (8): Linear(in_features=130, out_features=110, bias=True)
+      (9): BatchNorm1d(110, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.008838163280266827, inplace=False)
+      (12): Linear(in_features=110, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40699
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39019
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.33824
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.26482
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.20617
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.16905
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.14711
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13321
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12343
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.11621
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11057
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.10573
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10118
+###################-FINISHED TRAINING-###################
+Trial 24 finished with value: 0.10118391148898258 and parameters: {'n_layers': 3, 'hidden_dim_0': 479, 'hidden_dim_1': 130, 'hidden_dim_2': 110, 'embed_dim': 14, 'dropout': 0.008838163280266827, 'optimizer': 'Adam', 'learning_rate': 0.0045609618735068325, 'epochs': 13, 'batch_size': 256}. Best is trial 24 with value: 0.10118391148898258.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 11)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=231, out_features=487, bias=True)
+      (1): BatchNorm1d(487, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.20731944361591376, inplace=False)
+      (4): Linear(in_features=487, out_features=116, bias=True)
+      (5): BatchNorm1d(116, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.20731944361591376, inplace=False)
+      (8): Linear(in_features=116, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41053
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39641
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.36261
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.29725
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.23335
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.18882
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.16102
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.14362
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13269
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12492
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11922
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.11474
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.11102
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10807
+###################-FINISHED TRAINING-###################
+Trial 25 finished with value: 0.10807175572858377 and parameters: {'n_layers': 2, 'hidden_dim_0': 487, 'hidden_dim_1': 116, 'embed_dim': 11, 'dropout': 0.20731944361591376, 'optimizer': 'Adam', 'learning_rate': 0.0052167025943796255, 'epochs': 14, 'batch_size': 1024}. Best is trial 24 with value: 0.10118391148898258.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 23)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=483, out_features=510, bias=True)
+      (1): BatchNorm1d(510, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.08950807599949304, inplace=False)
+      (4): Linear(in_features=510, out_features=80, bias=True)
+      (5): BatchNorm1d(80, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.08950807599949304, inplace=False)
+      (8): Linear(in_features=80, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40993
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39782
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.37906
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.34361
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.30052
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.25805
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.22138
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.19165
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.16861
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.15124
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.13816
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.12854
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.12050
+###################-FINISHED TRAINING-###################
+Trial 26 finished with value: 0.12049524810110389 and parameters: {'n_layers': 2, 'hidden_dim_0': 510, 'hidden_dim_1': 80, 'embed_dim': 23, 'dropout': 0.08950807599949304, 'optimizer': 'Adam', 'learning_rate': 0.0018776126418112076, 'epochs': 13, 'batch_size': 512}. Best is trial 24 with value: 0.10118391148898258.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 13)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=273, out_features=299, bias=True)
+      (1): BatchNorm1d(299, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.03965823068241192, inplace=False)
+      (4): Linear(in_features=299, out_features=149, bias=True)
+      (5): BatchNorm1d(149, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.03965823068241192, inplace=False)
+      (8): Linear(in_features=149, out_features=99, bias=True)
+      (9): BatchNorm1d(99, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.03965823068241192, inplace=False)
+      (12): Linear(in_features=99, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40755
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39031
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.33472
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.25962
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.20252
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.16768
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.14692
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13439
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12588
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.11951
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11510
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.11050
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10703
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10335
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.10059
+###################-FINISHED TRAINING-###################
+Trial 27 finished with value: 0.10058862146254101 and parameters: {'n_layers': 3, 'hidden_dim_0': 299, 'hidden_dim_1': 149, 'hidden_dim_2': 99, 'embed_dim': 13, 'dropout': 0.03965823068241192, 'optimizer': 'Adam', 'learning_rate': 0.004939480185836542, 'epochs': 15, 'batch_size': 256}. Best is trial 27 with value: 0.10058862146254101.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 48)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=1008, out_features=314, bias=True)
+      (1): BatchNorm1d(314, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.0011080708161674765, inplace=False)
+      (4): Linear(in_features=314, out_features=141, bias=True)
+      (5): BatchNorm1d(141, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.0011080708161674765, inplace=False)
+      (8): Linear(in_features=141, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40861
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39889
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.39152
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.38056
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.36566
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.34808
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.32831
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.30700
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.28509
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.26341
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.24194
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.22161
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.20320
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.18590
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.17065
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.15662
+###################-FINISHED TRAINING-###################
+Trial 28 finished with value: 0.15662358400683818 and parameters: {'n_layers': 2, 'hidden_dim_0': 314, 'hidden_dim_1': 141, 'embed_dim': 48, 'dropout': 0.0011080708161674765, 'optimizer': 'Adam', 'learning_rate': 0.0005327839704491398, 'epochs': 16, 'batch_size': 256}. Best is trial 27 with value: 0.10058862146254101.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 6)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=126, out_features=260, bias=True)
+      (1): BatchNorm1d(260, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.11675465701186452, inplace=False)
+      (4): Linear(in_features=260, out_features=97, bias=True)
+      (5): BatchNorm1d(97, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.11675465701186452, inplace=False)
+      (8): Linear(in_features=97, out_features=98, bias=True)
+      (9): BatchNorm1d(98, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.11675465701186452, inplace=False)
+      (12): Linear(in_features=98, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41341
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40266
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.39545
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.38319
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.36521
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.34300
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.31833
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.29288
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.26810
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.24495
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.22410
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.20588
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.19005
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.17670
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.16559
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.15647
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.14874
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.14302
+OPTUNA TUNER: TRAIN:	 Epoch:  19 | BCE Loss: 0.13727
+OPTUNA TUNER: TRAIN:	 Epoch:  20 | BCE Loss: 0.13292
+###################-FINISHED TRAINING-###################
+Trial 29 finished with value: 0.13292375420463995 and parameters: {'n_layers': 3, 'hidden_dim_0': 260, 'hidden_dim_1': 97, 'hidden_dim_2': 98, 'embed_dim': 6, 'dropout': 0.11675465701186452, 'optimizer': 'Adam', 'learning_rate': 0.0021108676265259455, 'epochs': 20, 'batch_size': 256}. Best is trial 27 with value: 0.10058862146254101.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 12)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=252, out_features=211, bias=True)
+      (1): BatchNorm1d(211, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.4036673650654913, inplace=False)
+      (4): Linear(in_features=211, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41147
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39530
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.35441
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.28643
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.22701
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.18738
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.16356
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.14946
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13944
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.13284
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.12697
+###################-FINISHED TRAINING-###################
+Trial 30 finished with value: 0.12697083067883144 and parameters: {'n_layers': 1, 'hidden_dim_0': 211, 'embed_dim': 12, 'dropout': 0.4036673650654913, 'optimizer': 'Adam', 'learning_rate': 0.005099492256692234, 'epochs': 11, 'batch_size': 512}. Best is trial 27 with value: 0.10058862146254101.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 15)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=315, out_features=415, bias=True)
+      (1): BatchNorm1d(415, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.04264371167148635, inplace=False)
+      (4): Linear(in_features=415, out_features=51, bias=True)
+      (5): BatchNorm1d(51, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.04264371167148635, inplace=False)
+      (8): Linear(in_features=51, out_features=226, bias=True)
+      (9): BatchNorm1d(226, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.04264371167148635, inplace=False)
+      (12): Linear(in_features=226, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40808
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39014
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.33257
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.25624
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.19924
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.16517
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.14544
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13322
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12483
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.11887
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11399
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.10963
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10602
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10257
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.09880
+###################-FINISHED TRAINING-###################
+Trial 31 finished with value: 0.09879555120412593 and parameters: {'n_layers': 3, 'hidden_dim_0': 415, 'hidden_dim_1': 51, 'hidden_dim_2': 226, 'embed_dim': 15, 'dropout': 0.04264371167148635, 'optimizer': 'Adam', 'learning_rate': 0.004761470582066882, 'epochs': 15, 'batch_size': 256}. Best is trial 31 with value: 0.09879555120412593.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 18)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=378, out_features=375, bias=True)
+      (1): BatchNorm1d(375, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.07870428643148608, inplace=False)
+      (4): Linear(in_features=375, out_features=53, bias=True)
+      (5): BatchNorm1d(53, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.07870428643148608, inplace=False)
+      (8): Linear(in_features=53, out_features=208, bias=True)
+      (9): BatchNorm1d(208, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.07870428643148608, inplace=False)
+      (12): Linear(in_features=208, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41008
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40002
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.38876
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.36881
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.34188
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.31160
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.28084
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.25133
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.22516
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.20226
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.18341
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.16749
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.15414
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.14376
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.13587
+###################-FINISHED TRAINING-###################
+Trial 32 finished with value: 0.13587010797637028 and parameters: {'n_layers': 3, 'hidden_dim_0': 375, 'hidden_dim_1': 53, 'hidden_dim_2': 208, 'embed_dim': 18, 'dropout': 0.07870428643148608, 'optimizer': 'Adam', 'learning_rate': 0.0014606632343080776, 'epochs': 15, 'batch_size': 256}. Best is trial 31 with value: 0.09879555120412593.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 10)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=210, out_features=315, bias=True)
+      (1): BatchNorm1d(315, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.036459215792720934, inplace=False)
+      (4): Linear(in_features=315, out_features=34, bias=True)
+      (5): BatchNorm1d(34, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.036459215792720934, inplace=False)
+      (8): Linear(in_features=34, out_features=102, bias=True)
+      (9): BatchNorm1d(102, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.036459215792720934, inplace=False)
+      (12): Linear(in_features=102, out_features=198, bias=True)
+      (13): BatchNorm1d(198, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.036459215792720934, inplace=False)
+      (16): Linear(in_features=198, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40776
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.38140
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.28801
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.20653
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.16736
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.14841
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.13734
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.12992
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12389
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.11892
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11434
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.11053
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10654
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10273
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.09969
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.09731
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.09443
+###################-FINISHED TRAINING-###################
+Trial 33 finished with value: 0.09443071674945269 and parameters: {'n_layers': 4, 'hidden_dim_0': 315, 'hidden_dim_1': 34, 'hidden_dim_2': 102, 'hidden_dim_3': 198, 'embed_dim': 10, 'dropout': 0.036459215792720934, 'optimizer': 'Adam', 'learning_rate': 0.008984462215523646, 'epochs': 17, 'batch_size': 256}. Best is trial 33 with value: 0.09443071674945269.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 10)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=210, out_features=318, bias=True)
+      (1): BatchNorm1d(318, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.1702686932794728, inplace=False)
+      (4): Linear(in_features=318, out_features=38, bias=True)
+      (5): BatchNorm1d(38, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.1702686932794728, inplace=False)
+      (8): Linear(in_features=38, out_features=106, bias=True)
+      (9): BatchNorm1d(106, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.1702686932794728, inplace=False)
+      (12): Linear(in_features=106, out_features=190, bias=True)
+      (13): BatchNorm1d(190, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.1702686932794728, inplace=False)
+      (16): Linear(in_features=190, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40857
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.37860
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.27611
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.20061
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.16680
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.15032
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.14044
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13284
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12767
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12251
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11776
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.11389
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.11017
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10738
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.10413
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.10146
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.09915
+###################-FINISHED TRAINING-###################
+Trial 34 finished with value: 0.09915264514207785 and parameters: {'n_layers': 4, 'hidden_dim_0': 318, 'hidden_dim_1': 38, 'hidden_dim_2': 106, 'hidden_dim_3': 190, 'embed_dim': 10, 'dropout': 0.1702686932794728, 'optimizer': 'Adam', 'learning_rate': 0.00996612768437524, 'epochs': 17, 'batch_size': 256}. Best is trial 33 with value: 0.09443071674945269.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 9)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=189, out_features=294, bias=True)
+      (1): BatchNorm1d(294, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.17049914922210327, inplace=False)
+      (4): Linear(in_features=294, out_features=33, bias=True)
+      (5): BatchNorm1d(33, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.17049914922210327, inplace=False)
+      (8): Linear(in_features=33, out_features=91, bias=True)
+      (9): BatchNorm1d(91, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.17049914922210327, inplace=False)
+      (12): Linear(in_features=91, out_features=190, bias=True)
+      (13): BatchNorm1d(190, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.17049914922210327, inplace=False)
+      (16): Linear(in_features=190, out_features=33, bias=True)
+      (17): BatchNorm1d(33, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.17049914922210327, inplace=False)
+      (20): Linear(in_features=33, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41798
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40108
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.37570
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.31354
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.24505
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.19551
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.16550
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.14722
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13620
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12918
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.12379
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.12008
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.11668
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.11394
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.11221
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.10957
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.10754
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.10572
+###################-FINISHED TRAINING-###################
+Trial 35 finished with value: 0.10571688745006336 and parameters: {'n_layers': 5, 'hidden_dim_0': 294, 'hidden_dim_1': 33, 'hidden_dim_2': 91, 'hidden_dim_3': 190, 'hidden_dim_4': 33, 'embed_dim': 9, 'dropout': 0.17049914922210327, 'optimizer': 'Adam', 'learning_rate': 0.0072076693175165, 'epochs': 18, 'batch_size': 2048}. Best is trial 33 with value: 0.09443071674945269.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 4)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=84, out_features=328, bias=True)
+      (1): BatchNorm1d(328, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.24190310087833425, inplace=False)
+      (4): Linear(in_features=328, out_features=46, bias=True)
+      (5): BatchNorm1d(46, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.24190310087833425, inplace=False)
+      (8): Linear(in_features=46, out_features=196, bias=True)
+      (9): BatchNorm1d(196, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.24190310087833425, inplace=False)
+      (12): Linear(in_features=196, out_features=182, bias=True)
+      (13): BatchNorm1d(182, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.24190310087833425, inplace=False)
+      (16): Linear(in_features=182, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.42219
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40621
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.39745
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.37831
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.34278
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.29752
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.25312
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.21618
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.18820
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.16862
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.15461
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.14452
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.13713
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.13185
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.12760
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.12406
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.12127
+###################-FINISHED TRAINING-###################
+Trial 36 finished with value: 0.12127134836243242 and parameters: {'n_layers': 4, 'hidden_dim_0': 328, 'hidden_dim_1': 46, 'hidden_dim_2': 196, 'hidden_dim_3': 182, 'embed_dim': 4, 'dropout': 0.24190310087833425, 'optimizer': 'Adam', 'learning_rate': 0.008080919808639724, 'epochs': 17, 'batch_size': 4096}. Best is trial 33 with value: 0.09443071674945269.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 6)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=126, out_features=250, bias=True)
+      (1): BatchNorm1d(250, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.201734916629199, inplace=False)
+      (4): Linear(in_features=250, out_features=33, bias=True)
+      (5): BatchNorm1d(33, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.201734916629199, inplace=False)
+      (8): Linear(in_features=33, out_features=492, bias=True)
+      (9): BatchNorm1d(492, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.201734916629199, inplace=False)
+      (12): Linear(in_features=492, out_features=211, bias=True)
+      (13): BatchNorm1d(211, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.201734916629199, inplace=False)
+      (16): Linear(in_features=211, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41421
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39873
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.35793
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.27795
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.21145
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.17302
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.15160
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13981
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13240
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12769
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.12392
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.12124
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.11837
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.11590
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.11399
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.11155
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.10983
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.10794
+###################-FINISHED TRAINING-###################
+Trial 37 finished with value: 0.1079361800163747 and parameters: {'n_layers': 4, 'hidden_dim_0': 250, 'hidden_dim_1': 33, 'hidden_dim_2': 492, 'hidden_dim_3': 211, 'embed_dim': 6, 'dropout': 0.201734916629199, 'optimizer': 'Adam', 'learning_rate': 0.008884848999767032, 'epochs': 18, 'batch_size': 1024}. Best is trial 33 with value: 0.09443071674945269.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 10)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=210, out_features=397, bias=True)
+      (1): BatchNorm1d(397, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.289771284261512, inplace=False)
+      (4): Linear(in_features=397, out_features=53, bias=True)
+      (5): BatchNorm1d(53, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.289771284261512, inplace=False)
+      (8): Linear(in_features=53, out_features=124, bias=True)
+      (9): BatchNorm1d(124, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.289771284261512, inplace=False)
+      (12): Linear(in_features=124, out_features=124, bias=True)
+      (13): BatchNorm1d(124, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.289771284261512, inplace=False)
+      (16): Linear(in_features=124, out_features=58, bias=True)
+      (17): BatchNorm1d(58, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.289771284261512, inplace=False)
+      (20): Linear(in_features=58, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.53431
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.45715
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.44215
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.43686
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.43430
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.43186
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.42937
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.42782
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.42591
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.42479
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.42351
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.42239
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.42166
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.42051
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.41986
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.41888
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.41809
+###################-FINISHED TRAINING-###################
+Trial 38 finished with value: 0.4180875703091265 and parameters: {'n_layers': 5, 'hidden_dim_0': 397, 'hidden_dim_1': 53, 'hidden_dim_2': 124, 'hidden_dim_3': 124, 'hidden_dim_4': 58, 'embed_dim': 10, 'dropout': 0.289771284261512, 'optimizer': 'Adam', 'learning_rate': 1.1423740281502643e-05, 'epochs': 17, 'batch_size': 256}. Best is trial 33 with value: 0.09443071674945269.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 7)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=147, out_features=211, bias=True)
+      (1): BatchNorm1d(211, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.11137725166742679, inplace=False)
+      (4): Linear(in_features=211, out_features=40, bias=True)
+      (5): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.11137725166742679, inplace=False)
+      (8): Linear(in_features=40, out_features=84, bias=True)
+      (9): BatchNorm1d(84, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.11137725166742679, inplace=False)
+      (12): Linear(in_features=84, out_features=265, bias=True)
+      (13): BatchNorm1d(265, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.11137725166742679, inplace=False)
+      (16): Linear(in_features=265, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.42116
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40764
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.40322
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.39913
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.39288
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.38222
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.36801
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.34982
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.32944
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.30813
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.28714
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.26721
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.24847
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.23127
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.21597
+###################-FINISHED TRAINING-###################
+Trial 39 finished with value: 0.21597315797688615 and parameters: {'n_layers': 4, 'hidden_dim_0': 211, 'hidden_dim_1': 40, 'hidden_dim_2': 84, 'hidden_dim_3': 265, 'embed_dim': 7, 'dropout': 0.11137725166742679, 'optimizer': 'Adam', 'learning_rate': 0.0026935268551372244, 'epochs': 15, 'batch_size': 4096}. Best is trial 33 with value: 0.09443071674945269.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 14)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=294, out_features=273, bias=True)
+      (1): BatchNorm1d(273, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.07924356257312352, inplace=False)
+      (4): Linear(in_features=273, out_features=63, bias=True)
+      (5): BatchNorm1d(63, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.07924356257312352, inplace=False)
+      (8): Linear(in_features=63, out_features=177, bias=True)
+      (9): BatchNorm1d(177, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.07924356257312352, inplace=False)
+      (12): Linear(in_features=177, out_features=124, bias=True)
+      (13): BatchNorm1d(124, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.07924356257312352, inplace=False)
+      (16): Linear(in_features=124, out_features=136, bias=True)
+      (17): BatchNorm1d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.07924356257312352, inplace=False)
+      (20): Linear(in_features=136, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.42204
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.40655
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.40296
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.40037
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.39782
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.39488
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.39124
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.38708
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.38196
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.37622
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.36967
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.36274
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.35544
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.34737
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.33969
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.33167
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.32294
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.31458
+OPTUNA TUNER: TRAIN:	 Epoch:  19 | BCE Loss: 0.30636
+###################-FINISHED TRAINING-###################
+Trial 40 finished with value: 0.30635711118494413 and parameters: {'n_layers': 5, 'hidden_dim_0': 273, 'hidden_dim_1': 63, 'hidden_dim_2': 177, 'hidden_dim_3': 124, 'hidden_dim_4': 136, 'embed_dim': 14, 'dropout': 0.07924356257312352, 'optimizer': 'Adam', 'learning_rate': 0.0007266511802161195, 'epochs': 19, 'batch_size': 2048}. Best is trial 33 with value: 0.09443071674945269.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 14)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=294, out_features=414, bias=True)
+      (1): BatchNorm1d(414, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.03427479302843091, inplace=False)
+      (4): Linear(in_features=414, out_features=39, bias=True)
+      (5): BatchNorm1d(39, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.03427479302843091, inplace=False)
+      (8): Linear(in_features=39, out_features=111, bias=True)
+      (9): BatchNorm1d(111, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.03427479302843091, inplace=False)
+      (12): Linear(in_features=111, out_features=279, bias=True)
+      (13): BatchNorm1d(279, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.03427479302843091, inplace=False)
+      (16): Linear(in_features=279, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40888
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.38978
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.32743
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.24779
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.19272
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.16121
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.14346
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.13256
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12548
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12019
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11571
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.11104
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10772
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10367
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.10045
+###################-FINISHED TRAINING-###################
+Trial 41 finished with value: 0.10045082335599764 and parameters: {'n_layers': 4, 'hidden_dim_0': 414, 'hidden_dim_1': 39, 'hidden_dim_2': 111, 'hidden_dim_3': 279, 'embed_dim': 14, 'dropout': 0.03427479302843091, 'optimizer': 'Adam', 'learning_rate': 0.005215419198695798, 'epochs': 15, 'batch_size': 256}. Best is trial 33 with value: 0.09443071674945269.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 10)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=210, out_features=343, bias=True)
+      (1): BatchNorm1d(343, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.0390772846605184, inplace=False)
+      (4): Linear(in_features=343, out_features=39, bias=True)
+      (5): BatchNorm1d(39, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.0390772846605184, inplace=False)
+      (8): Linear(in_features=39, out_features=117, bias=True)
+      (9): BatchNorm1d(117, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.0390772846605184, inplace=False)
+      (12): Linear(in_features=117, out_features=269, bias=True)
+      (13): BatchNorm1d(269, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.0390772846605184, inplace=False)
+      (16): Linear(in_features=269, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40807
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.37801
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.27363
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.19355
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.15950
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.14295
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.13319
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.12615
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12047
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.11551
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11123
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.10692
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10341
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.09994
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.09652
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.09389
+###################-FINISHED TRAINING-###################
+Trial 42 finished with value: 0.09388864063207181 and parameters: {'n_layers': 4, 'hidden_dim_0': 343, 'hidden_dim_1': 39, 'hidden_dim_2': 117, 'hidden_dim_3': 269, 'embed_dim': 10, 'dropout': 0.0390772846605184, 'optimizer': 'Adam', 'learning_rate': 0.009961112025892583, 'epochs': 16, 'batch_size': 256}. Best is trial 42 with value: 0.09388864063207181.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 10)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=210, out_features=433, bias=True)
+      (1): BatchNorm1d(433, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.0323839616859872, inplace=False)
+      (4): Linear(in_features=433, out_features=40, bias=True)
+      (5): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.0323839616859872, inplace=False)
+      (8): Linear(in_features=40, out_features=126, bias=True)
+      (9): BatchNorm1d(126, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.0323839616859872, inplace=False)
+      (12): Linear(in_features=126, out_features=274, bias=True)
+      (13): BatchNorm1d(274, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.0323839616859872, inplace=False)
+      (16): Linear(in_features=274, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40791
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.37844
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.27543
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.19537
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.16026
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.14432
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.13480
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.12851
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12312
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.11869
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11426
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.10978
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10604
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10271
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.09932
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.09690
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.09415
+###################-FINISHED TRAINING-###################
+Trial 43 finished with value: 0.09414949747430384 and parameters: {'n_layers': 4, 'hidden_dim_0': 433, 'hidden_dim_1': 40, 'hidden_dim_2': 126, 'hidden_dim_3': 274, 'embed_dim': 10, 'dropout': 0.0323839616859872, 'optimizer': 'Adam', 'learning_rate': 0.00944537067303818, 'epochs': 17, 'batch_size': 256}. Best is trial 42 with value: 0.09388864063207181.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 5)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=105, out_features=350, bias=True)
+      (1): BatchNorm1d(350, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.14141406844137133, inplace=False)
+      (4): Linear(in_features=350, out_features=40, bias=True)
+      (5): BatchNorm1d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.14141406844137133, inplace=False)
+      (8): Linear(in_features=40, out_features=139, bias=True)
+      (9): BatchNorm1d(139, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.14141406844137133, inplace=False)
+      (12): Linear(in_features=139, out_features=263, bias=True)
+      (13): BatchNorm1d(263, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.14141406844137133, inplace=False)
+      (16): Linear(in_features=263, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41032
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39281
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.33642
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.26186
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.20737
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.17545
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.15739
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.14681
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.14021
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.13479
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.13128
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.12844
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.12574
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.12304
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.12070
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.11831
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.11664
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.11460
+OPTUNA TUNER: TRAIN:	 Epoch:  19 | BCE Loss: 0.11274
+###################-FINISHED TRAINING-###################
+Trial 44 finished with value: 0.112739863286285 and parameters: {'n_layers': 4, 'hidden_dim_0': 350, 'hidden_dim_1': 40, 'hidden_dim_2': 139, 'hidden_dim_3': 263, 'embed_dim': 5, 'dropout': 0.14141406844137133, 'optimizer': 'Adam', 'learning_rate': 0.00900397566193446, 'epochs': 19, 'batch_size': 256}. Best is trial 42 with value: 0.09388864063207181.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 10)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=210, out_features=441, bias=True)
+      (1): BatchNorm1d(441, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.07386453690709785, inplace=False)
+      (4): Linear(in_features=441, out_features=48, bias=True)
+      (5): BatchNorm1d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.07386453690709785, inplace=False)
+      (8): Linear(in_features=48, out_features=266, bias=True)
+      (9): BatchNorm1d(266, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.07386453690709785, inplace=False)
+      (12): Linear(in_features=266, out_features=169, bias=True)
+      (13): BatchNorm1d(169, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.07386453690709785, inplace=False)
+      (16): Linear(in_features=169, out_features=111, bias=True)
+      (17): BatchNorm1d(111, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.07386453690709785, inplace=False)
+      (20): Linear(in_features=111, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40819
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.37753
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.27841
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.19973
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.16445
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.14676
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.13639
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.12948
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12306
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.11778
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11309
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.10881
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10453
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10148
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.09815
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.09583
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.09299
+###################-FINISHED TRAINING-###################
+Trial 45 finished with value: 0.09299027154956481 and parameters: {'n_layers': 5, 'hidden_dim_0': 441, 'hidden_dim_1': 48, 'hidden_dim_2': 266, 'hidden_dim_3': 169, 'hidden_dim_4': 111, 'embed_dim': 10, 'dropout': 0.07386453690709785, 'optimizer': 'Adam', 'learning_rate': 0.00925582681566323, 'epochs': 17, 'batch_size': 256}. Best is trial 45 with value: 0.09299027154956481.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 8)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=168, out_features=444, bias=True)
+      (1): BatchNorm1d(444, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.07340940520455021, inplace=False)
+      (4): Linear(in_features=444, out_features=48, bias=True)
+      (5): BatchNorm1d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.07340940520455021, inplace=False)
+      (8): Linear(in_features=48, out_features=263, bias=True)
+      (9): BatchNorm1d(263, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.07340940520455021, inplace=False)
+      (12): Linear(in_features=263, out_features=156, bias=True)
+      (13): BatchNorm1d(156, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.07340940520455021, inplace=False)
+      (16): Linear(in_features=156, out_features=118, bias=True)
+      (17): BatchNorm1d(118, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.07340940520455021, inplace=False)
+      (20): Linear(in_features=118, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41164
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39751
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.36287
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.29415
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.22987
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.18629
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.15913
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.14276
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13232
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12526
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.12017
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.11671
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.11350
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.11075
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.10779
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.10552
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.10309
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.10062
+###################-FINISHED TRAINING-###################
+Trial 46 finished with value: 0.10062040023336362 and parameters: {'n_layers': 5, 'hidden_dim_0': 444, 'hidden_dim_1': 48, 'hidden_dim_2': 263, 'hidden_dim_3': 156, 'hidden_dim_4': 118, 'embed_dim': 8, 'dropout': 0.07340940520455021, 'optimizer': 'Adam', 'learning_rate': 0.00632593839824807, 'epochs': 18, 'batch_size': 1024}. Best is trial 45 with value: 0.09299027154956481.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 16)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=336, out_features=354, bias=True)
+      (1): BatchNorm1d(354, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.09616193939880137, inplace=False)
+      (4): Linear(in_features=354, out_features=66, bias=True)
+      (5): BatchNorm1d(66, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.09616193939880137, inplace=False)
+      (8): Linear(in_features=66, out_features=264, bias=True)
+      (9): BatchNorm1d(264, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.09616193939880137, inplace=False)
+      (12): Linear(in_features=264, out_features=309, bias=True)
+      (13): BatchNorm1d(309, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.09616193939880137, inplace=False)
+      (16): Linear(in_features=309, out_features=107, bias=True)
+      (17): BatchNorm1d(107, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.09616193939880137, inplace=False)
+      (20): Linear(in_features=107, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41081
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39813
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.37497
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.33355
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.28640
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.24267
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.20719
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.18031
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.16133
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.14752
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.13723
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.13034
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.12461
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.11987
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.11644
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.11284
+OPTUNA TUNER: TRAIN:	 Epoch:  17 | BCE Loss: 0.10998
+OPTUNA TUNER: TRAIN:	 Epoch:  18 | BCE Loss: 0.10713
+OPTUNA TUNER: TRAIN:	 Epoch:  19 | BCE Loss: 0.10451
+OPTUNA TUNER: TRAIN:	 Epoch:  20 | BCE Loss: 0.10230
+###################-FINISHED TRAINING-###################
+Trial 47 finished with value: 0.10230464131508868 and parameters: {'n_layers': 5, 'hidden_dim_0': 354, 'hidden_dim_1': 66, 'hidden_dim_2': 264, 'hidden_dim_3': 309, 'hidden_dim_4': 107, 'embed_dim': 16, 'dropout': 0.09616193939880137, 'optimizer': 'Adam', 'learning_rate': 0.0025092955673389453, 'epochs': 20, 'batch_size': 256}. Best is trial 45 with value: 0.09299027154956481.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 11)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=231, out_features=436, bias=True)
+      (1): BatchNorm1d(436, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.02783959102911735, inplace=False)
+      (4): Linear(in_features=436, out_features=57, bias=True)
+      (5): BatchNorm1d(57, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.02783959102911735, inplace=False)
+      (8): Linear(in_features=57, out_features=384, bias=True)
+      (9): BatchNorm1d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.02783959102911735, inplace=False)
+      (12): Linear(in_features=384, out_features=230, bias=True)
+      (13): BatchNorm1d(230, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.02783959102911735, inplace=False)
+      (16): Linear(in_features=230, out_features=231, bias=True)
+      (17): BatchNorm1d(231, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.02783959102911735, inplace=False)
+      (20): Linear(in_features=231, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.40925
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.38983
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.32201
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.23679
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.18184
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.15286
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.13677
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.12773
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.12157
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.11673
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.11246
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.10846
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.10447
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.10161
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.09819
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.09503
+###################-FINISHED TRAINING-###################
+Trial 48 finished with value: 0.09503305363881415 and parameters: {'n_layers': 5, 'hidden_dim_0': 436, 'hidden_dim_1': 57, 'hidden_dim_2': 384, 'hidden_dim_3': 230, 'hidden_dim_4': 231, 'embed_dim': 11, 'dropout': 0.02783959102911735, 'optimizer': 'Adam', 'learning_rate': 0.006317218845147044, 'epochs': 16, 'batch_size': 512}. Best is trial 45 with value: 0.09299027154956481.
+OPTUNA TUNER: PyTorch: DeepEmbed(
+  (embedding): EmbeddingLayer(
+    (embedding): Embedding(596591, 6)
+  )
+  (mlp): MultiLayerPerceptronLayer(
+    (mlp): Sequential(
+      (0): Linear(in_features=126, out_features=446, bias=True)
+      (1): BatchNorm1d(446, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.02606118976202936, inplace=False)
+      (4): Linear(in_features=446, out_features=58, bias=True)
+      (5): BatchNorm1d(58, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Dropout(p=0.02606118976202936, inplace=False)
+      (8): Linear(in_features=58, out_features=405, bias=True)
+      (9): BatchNorm1d(405, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (10): ReLU()
+      (11): Dropout(p=0.02606118976202936, inplace=False)
+      (12): Linear(in_features=405, out_features=232, bias=True)
+      (13): BatchNorm1d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (14): ReLU()
+      (15): Dropout(p=0.02606118976202936, inplace=False)
+      (16): Linear(in_features=232, out_features=216, bias=True)
+      (17): BatchNorm1d(216, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (18): ReLU()
+      (19): Dropout(p=0.02606118976202936, inplace=False)
+      (20): Linear(in_features=216, out_features=1, bias=True)
+    )
+  )
+)
+###################-STARTED TRAINING-###################
+OPTUNA TUNER: TRAIN:	 Epoch:   1 | BCE Loss: 0.41053
+OPTUNA TUNER: TRAIN:	 Epoch:   2 | BCE Loss: 0.39553
+OPTUNA TUNER: TRAIN:	 Epoch:   3 | BCE Loss: 0.35867
+OPTUNA TUNER: TRAIN:	 Epoch:   4 | BCE Loss: 0.29665
+OPTUNA TUNER: TRAIN:	 Epoch:   5 | BCE Loss: 0.23820
+OPTUNA TUNER: TRAIN:	 Epoch:   6 | BCE Loss: 0.19447
+OPTUNA TUNER: TRAIN:	 Epoch:   7 | BCE Loss: 0.16568
+OPTUNA TUNER: TRAIN:	 Epoch:   8 | BCE Loss: 0.14699
+OPTUNA TUNER: TRAIN:	 Epoch:   9 | BCE Loss: 0.13563
+OPTUNA TUNER: TRAIN:	 Epoch:  10 | BCE Loss: 0.12752
+OPTUNA TUNER: TRAIN:	 Epoch:  11 | BCE Loss: 0.12183
+OPTUNA TUNER: TRAIN:	 Epoch:  12 | BCE Loss: 0.11711
+OPTUNA TUNER: TRAIN:	 Epoch:  13 | BCE Loss: 0.11362
+OPTUNA TUNER: TRAIN:	 Epoch:  14 | BCE Loss: 0.11014
+OPTUNA TUNER: TRAIN:	 Epoch:  15 | BCE Loss: 0.10749
+OPTUNA TUNER: TRAIN:	 Epoch:  16 | BCE Loss: 0.10488
+###################-FINISHED TRAINING-###################
+Trial 49 finished with value: 0.10488391930210676 and parameters: {'n_layers': 5, 'hidden_dim_0': 446, 'hidden_dim_1': 58, 'hidden_dim_2': 405, 'hidden_dim_3': 232, 'hidden_dim_4': 216, 'embed_dim': 6, 'dropout': 0.02606118976202936, 'optimizer': 'Adam', 'learning_rate': 0.0064054968331029825, 'epochs': 16, 'batch_size': 512}. Best is trial 45 with value: 0.09299027154956481.
+Number of finished trials: 50
+Best trial:
+  Value: 0.09299027154956481
+  Params: 
+    n_layers: 5
+    hidden_dim_0: 441
+    hidden_dim_1: 48
+    hidden_dim_2: 266
+    hidden_dim_3: 169
+    hidden_dim_4: 111
+    embed_dim: 10
+    dropout: 0.07386453690709785
+    optimizer: Adam
+    learning_rate: 0.00925582681566323
+    epochs: 17
+    batch_size: 256
