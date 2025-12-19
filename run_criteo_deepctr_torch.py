@@ -3,9 +3,8 @@ import datetime
 import os
 
 import pandas as pd
-import torch
 from deepctr_torch.inputs import DenseFeat, SparseFeat, get_feature_names
-from deepctr_torch.models import *
+from deepctr_torch.models import DeepFM
 from sklearn.metrics import log_loss, roc_auc_score
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
@@ -20,12 +19,23 @@ def main(config: dict, logger) -> None:
     target = ["label"]
     criteo_features = target + dense_features + sparse_features
 
-    criteo_path = os.path.join("data", "criteo_kaggle", "train.csv")
+    # ----- Data path -----
+    if config["data_path"]:
+        criteo_path = config["data_path"]
+    else:
+        criteo_path = os.path.join("data", "criteo_kaggle", "train.csv")
 
     logger.info(f"Loading the Criteo data from {criteo_path}")
 
     criteo_data = pd.read_csv(criteo_path, header=None, sep="\t", names=criteo_features)
-    criteo_data = criteo_data.sample(n=1_000_000, random_state=config["seed"])
+
+    # ----- Sampling -----
+    if config["sample_size"]:
+        criteo_data = criteo_data.sample(
+            n=config["sample_size"], random_state=config["seed"]
+        )
+    else:
+        pass
 
     # Categorical feature missing imputation --- need string here
     criteo_data[sparse_features] = criteo_data[sparse_features].fillna(
@@ -38,7 +48,7 @@ def main(config: dict, logger) -> None:
 
     # ----- Label Encoding for sparse features,and do simple Transformation for dense features ----- #
 
-    logger.info("Encoding sparse features and transforming dense features...")
+    logger.info(f"Encoding sparse features and transforming dense features...")
 
     for feat in sparse_features:
         lbe = LabelEncoder()
@@ -73,14 +83,6 @@ def main(config: dict, logger) -> None:
 
     # ----- Define Model, train, predict and evaluate ----- #
 
-    use_cuda = True
-    if use_cuda and torch.cuda.is_available():
-        device = "cuda:0"
-        logger.info(f"PyTorch: Cuda ready, device={device}")
-    else:
-        device = "cpu"
-        logger.info(f"PyTorch: Cuda not ready, device={device}")
-
     model = DeepFM(
         linear_feature_columns=linear_feature_columns,
         dnn_feature_columns=dnn_feature_columns,
@@ -89,7 +91,7 @@ def main(config: dict, logger) -> None:
         dnn_dropout=config["dnn_dropout"],
         dnn_activation=config["dnn_activation"],
         dnn_use_bn=config["dnn_use_bn"],
-        device=device,
+        device=config["device"],
         task="binary",
         l2_reg_embedding=1e-5,
     )
@@ -116,12 +118,25 @@ def main(config: dict, logger) -> None:
 if __name__ == "__main__":
 
     now = datetime.datetime.now()
-    logfname = f"criteo_1m_deepfm_{now.strftime('%Y%m%d_%H%M%S')}.log"
+    logfname = f"criteo_deepfm_{now.strftime('%Y%m%d_%H%M%S')}.log"
     logger = setup_logger(os.path.join("src", "logs", logfname))
 
-    parser = argparse.ArgumentParser(description="Criteo 1M DeepFM Training")
+    parser = argparse.ArgumentParser(description="Criteo - DeepCTR DeepFM Training")
 
-    # Add arguments for config
+    parser.add_argument(
+        "--data_path",
+        type=str,
+        default=None,
+        help="Path to the data. If not provided, the default path will be used.",
+    )
+
+    parser.add_argument(
+        "--sample_size",
+        type=int,
+        default=None,
+        help="Size of the sample to use. If not provided, the full data will be used.",
+    )
+
     parser.add_argument(
         "--embedding_dim", type=int, default=4, help="Dimension of the embedding layer"
     )
@@ -137,29 +152,34 @@ if __name__ == "__main__":
     )
     parser.add_argument("--dnn_use_bn", type=bool, default=False, help="Whether use BN")
     parser.add_argument(
-        "--learning_rate", type=float, default=0.0092, help="Learning rate"
+        "--device",
+        type=str,
+        default="cpu",
+        help="Device to use. If not provided, cpu will be used.",
     )
     parser.add_argument("--epochs", type=int, default=10, help="Number of epochs")
     parser.add_argument("--batch_size", type=int, default=16000, help="Batch size")
     parser.add_argument("--seed", type=int, default=1773, help="Random seed")
 
-    # Parse the arguments
     args = parser.parse_args()
 
-    # Use the arguments to configure the model
     config = {
+        "data_path": args.data_path,
+        "sample_size": args.sample_size,
         "embedding_dim": args.embedding_dim,
         "dnn_hidden_units": args.dnn_hidden_units,
         "dnn_dropout": args.dnn_dropout,
         "dnn_activation": args.dnn_activation,
         "dnn_use_bn": args.dnn_use_bn,
-        "learning_rate": args.learning_rate,
+        "device": args.device,
         "epochs": args.epochs,
         "batch_size": args.batch_size,
         "seed": args.seed,
     }
 
-    logger.info(f"Config: {config}")
+    logger.info("Config:")
+    for key, value in config.items():
+        logger.info(f"  {key}: {value}")
 
     main(config=config, logger=logger)
 

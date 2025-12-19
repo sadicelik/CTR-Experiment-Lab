@@ -1,4 +1,0 @@
-2025-12-15 16:02:13,896 - INFO: Loading the Criteo data from data\criteo_kaggle\train.csv
-2025-12-15 16:03:55,570 - INFO: Encoding sparse features and transforming dense features...
-2025-12-15 16:04:03,683 - INFO: PyTorch: Cuda ready, device=cuda:0
-2025-12-15 16:05:01,174 - INFO: TEST: BCE Loss: 0.5988 | ROC AUC: 0.7145 
