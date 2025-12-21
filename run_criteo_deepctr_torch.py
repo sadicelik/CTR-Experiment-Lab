@@ -2,24 +2,16 @@ import argparse
 import datetime
 import os
 
-import pandas as pd
 from deepctr_torch.inputs import DenseFeat, SparseFeat, get_feature_names
 from deepctr_torch.models import DeepFM
 from sklearn.metrics import log_loss, roc_auc_score
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 
+from src.dataset_class.criteo_dataset import CriteoDataset
 from src.utils.logging_utils import *
 
 
 def main(config: dict, logger) -> None:
-
-    dense_features = ["I" + str(i) for i in range(1, 14)]
-    sparse_features = ["C" + str(i) for i in range(1, 27)]
-    target = ["label"]
-    criteo_features = target + dense_features + sparse_features
-
-    # ----- Data path -----
     if config["data_path"]:
         criteo_path = config["data_path"]
     else:
@@ -27,46 +19,22 @@ def main(config: dict, logger) -> None:
 
     logger.info(f"Loading the Criteo data from {criteo_path}")
 
-    criteo_data = pd.read_csv(criteo_path, header=None, sep="\t", names=criteo_features)
-
-    # ----- Sampling -----
-    if config["sample_size"]:
-        criteo_data = criteo_data.sample(
-            n=config["sample_size"], random_state=config["seed"]
-        )
-    else:
-        pass
-
-    # Sparse features missing imputation --- need string here
-    criteo_data[sparse_features] = criteo_data[sparse_features].fillna(
-        "-1",
-    )
-    # Dense features missing imputation --- maybe need more inspection
-    criteo_data[dense_features] = criteo_data[dense_features].fillna(
-        0,
+    criteo_dataset = CriteoDataset(
+        data_path=criteo_path, sample_size=config["sample_size"], seed=config["seed"]
     )
 
-    # ----- Label Encoding for sparse features,and do simple Transformation for dense features ----- #
+    logger.info(f"Preprocessed the Criteo data.")
 
-    logger.info(f"Encoding sparse features and transforming dense features...")
-
-    for feat in sparse_features:
-        lbe = LabelEncoder()
-        criteo_data[feat] = lbe.fit_transform(criteo_data[feat])
-
-    mms = MinMaxScaler(feature_range=(0, 1))
-    criteo_data[dense_features] = mms.fit_transform(criteo_data[dense_features])
-
-    # ----- Count #unique features for each sparse field, and record dense feature field name ----- #
+    # ----- Generate input features ----- #
 
     fixlen_feature_columns = [
         SparseFeat(
             feat,
-            vocabulary_size=criteo_data[feat].max() + 1,
+            vocabulary_size=criteo_dataset.data[feat].max() + 1,
             embedding_dim=config["embedding_dim"],
         )
-        for feat in sparse_features
-    ] + [DenseFeat(feat, 1) for feat in dense_features]
+        for feat in criteo_dataset.SPARSE_FEATURES
+    ] + [DenseFeat(feat, 1) for feat in criteo_dataset.DENSE_FEATURES]
 
     dnn_feature_columns = fixlen_feature_columns
     linear_feature_columns = fixlen_feature_columns
@@ -76,7 +44,7 @@ def main(config: dict, logger) -> None:
     # ----- Generate input data for model ----- #
 
     criteo_train, criteo_test = train_test_split(
-        criteo_data, test_size=0.2, random_state=config["seed"]
+        criteo_dataset.data, test_size=config["test_size"], random_state=config["seed"]
     )
     train_model_input = {name: criteo_train[name] for name in feature_names}
     test_model_input = {name: criteo_test[name] for name in feature_names}
@@ -100,21 +68,23 @@ def main(config: dict, logger) -> None:
     )
 
     model.compile(
-        "adagrad", "binary_crossentropy", metrics=["binary_crossentropy", "auc"]
+        config["optimizer"],
+        "binary_crossentropy",
+        metrics=["binary_crossentropy", "auc"],
     )
 
     history = model.fit(
         train_model_input,
-        criteo_train[target].values,
+        criteo_train[criteo_dataset.TARGET].values,
         batch_size=config["batch_size"],
         epochs=config["epochs"],
         verbose=2,  # 0 for non, 1 for progress bar, 2 for every epoch
-        validation_split=0.2,
+        validation_split=config["val_size"],
     )
     pred_ans = model.predict(test_model_input, batch_size=256)
 
     logger.info(
-        f"TEST: BCE Loss: {round(log_loss(criteo_test[target].values, pred_ans), 4)} | ROC AUC: {round(roc_auc_score(criteo_test[target].values, pred_ans), 4)} "
+        f"TEST: BCE Loss: {round(log_loss(criteo_test[criteo_dataset.TARGET].values, pred_ans), 4)} | ROC AUC: {round(roc_auc_score(criteo_test[criteo_dataset.TARGET].values, pred_ans), 4)} "
     )
 
 
@@ -138,6 +108,12 @@ if __name__ == "__main__":
         type=int,
         default=None,
         help="Size of the sample to use. If not provided, the full data will be used.",
+    )
+
+    parser.add_argument("--test_size", type=float, default=0.2, help="Test size ratio")
+
+    parser.add_argument(
+        "--val_size", type=float, default=0.2, help="Validation size ratio"
     )
 
     parser.add_argument(
@@ -176,6 +152,7 @@ if __name__ == "__main__":
         default="cpu",
         help="Device to use. If not provided, cpu will be used.",
     )
+    parser.add_argument("--optimizer", type=str, default="adam", help="Optimizer")
     parser.add_argument("--epochs", type=int, default=10, help="Number of epochs")
     parser.add_argument("--batch_size", type=int, default=16000, help="Batch size")
     parser.add_argument("--seed", type=int, default=1773, help="Random seed")
@@ -185,6 +162,8 @@ if __name__ == "__main__":
     config = {
         "data_path": args.data_path,
         "sample_size": args.sample_size,
+        "test_size": args.test_size,
+        "val_size": args.val_size,
         "embedding_dim": args.embedding_dim,
         "dnn_hidden_units": args.dnn_hidden_units,
         "l2_reg_linear": args.l2_reg_linear,
@@ -195,6 +174,7 @@ if __name__ == "__main__":
         "dnn_activation": args.dnn_activation,
         "dnn_use_bn": args.dnn_use_bn,
         "device": args.device,
+        "optimizer": args.optimizer,
         "epochs": args.epochs,
         "batch_size": args.batch_size,
         "seed": args.seed,

@@ -77,7 +77,3 @@ class CriteoDataset(Dataset):
         for feat in self.SPARSE_FEATURES:
             lbe = LabelEncoder()
             self.data[feat] = lbe.fit_transform(self.data[feat])
-
-
-if __name__ == "__main__":
-    dataset = CriteoDataset(sample_size=1_000_000, seed=1773)
