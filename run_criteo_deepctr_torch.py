@@ -37,11 +37,11 @@ def main(config: dict, logger) -> None:
     else:
         pass
 
-    # Categorical feature missing imputation --- need string here
+    # Sparse features missing imputation --- need string here
     criteo_data[sparse_features] = criteo_data[sparse_features].fillna(
         "-1",
     )
-    # Dense feature missing imputation --- maybe need more inspection
+    # Dense features missing imputation --- maybe need more inspection
     criteo_data[dense_features] = criteo_data[dense_features].fillna(
         0,
     )
@@ -87,13 +87,16 @@ def main(config: dict, logger) -> None:
         linear_feature_columns=linear_feature_columns,
         dnn_feature_columns=dnn_feature_columns,
         dnn_hidden_units=config["dnn_hidden_units"],
+        l2_reg_linear=config["l2_reg_linear"],
+        l2_reg_embedding=config["l2_reg_embedding"],
+        l2_reg_dnn=config["l2_reg_dnn"],
+        init_std=config["init_std"],
         seed=config["seed"],
         dnn_dropout=config["dnn_dropout"],
         dnn_activation=config["dnn_activation"],
         dnn_use_bn=config["dnn_use_bn"],
         device=config["device"],
         task="binary",
-        l2_reg_embedding=1e-5,
     )
 
     model.compile(
@@ -146,7 +149,23 @@ if __name__ == "__main__":
         default=(400, 400, 400),
         help="Hidden dimensions of the MLP layer",
     )
-    parser.add_argument("--dnn_dropout", type=float, default=0.5, help="Dropout rate")
+    parser.add_argument(
+        "--l2_reg_linear",
+        type=float,
+        default=1e-5,
+        help="L2 regularizer of linear part",
+    )
+    parser.add_argument(
+        "--l2_reg_embedding",
+        type=float,
+        default=1e-5,
+        help="L2 regularizer of embedding part",
+    )
+    parser.add_argument(
+        "--l2_reg_dnn", type=float, default=0, help="L2 regularizer of DNN part"
+    )
+    parser.add_argument("--init_std", type=float, default=1e-5, help="Initializer std")
+    parser.add_argument("--dnn_dropout", type=float, default=0.9, help="Dropout rate")
     parser.add_argument(
         "--dnn_activation", type=str, default="relu", help="Activation function"
     )
@@ -168,6 +187,10 @@ if __name__ == "__main__":
         "sample_size": args.sample_size,
         "embedding_dim": args.embedding_dim,
         "dnn_hidden_units": args.dnn_hidden_units,
+        "l2_reg_linear": args.l2_reg_linear,
+        "l2_reg_embedding": args.l2_reg_embedding,
+        "l2_reg_dnn": args.l2_reg_dnn,
+        "init_std": args.init_std,
         "dnn_dropout": args.dnn_dropout,
         "dnn_activation": args.dnn_activation,
         "dnn_use_bn": args.dnn_use_bn,

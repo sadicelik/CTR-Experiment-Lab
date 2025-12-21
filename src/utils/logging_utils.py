@@ -17,7 +17,6 @@ def setup_logger(log_fpath: str):
 
     # Create formatter
     formatter = logging.Formatter("%(asctime)s - %(levelname)s: %(message)s")
-    # formatter = logging.Formatter("%(message)s")
 
     # Create console handler and set level to debug
     ch = logging.StreamHandler(sys.stdout)
