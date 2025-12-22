@@ -35,12 +35,11 @@ class AvazuCTRDataset(Dataset):
         https://www.kaggle.com/c/avazu-ctr-prediction
     """
 
-    TARGET_COLUMN = "click"
+    TARGET = "click"
 
-    ID_FEATURE_NAME = ["id"]
+    ID_FEATURE = ["id"]
 
-    CAT_FEATURE_NAMES = [
-        "id",
+    CAT_FEATURES = [
         "C1",
         "banner_pos",
         "site_id",
@@ -101,8 +100,8 @@ class AvazuCTRDataset(Dataset):
             print(f"AvazuCTRDataset: Sampling {self.sample_size} rows from the dataset")
             self.data = self.data.sample(n=self.sample_size, random_state=self.seed)
 
-        self.x = self.data.drop(columns=[self.TARGET_COLUMN])
-        self.y = self.data[self.TARGET_COLUMN]
+        self.x = self.data.drop(columns=[self.TARGET])
+        self.y = self.data[self.TARGET]
 
         self.field_dims = self._get_field_dims()
 
@@ -172,12 +171,12 @@ class AvazuCTRDataset(Dataset):
 
     def label_encoding(self) -> None:
         """Label encoding categorical features."""
-        for feature in tqdm(self.data.columns):
+        for feature in tqdm(self.CAT_FEATURES):
             lbe = LabelEncoder()
             self.data[feature] = lbe.fit_transform(self.data[feature])
 
         print(
-            f"AvazuCTRDataset: Label encoded categorical features {list(self.data.columns)}."
+            f"AvazuCTRDataset: Label encoded categorical features {list(self.CAT_FEATURES)}."
         )
 
     def _get_field_dims(self):

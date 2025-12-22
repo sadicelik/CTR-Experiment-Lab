@@ -2,7 +2,7 @@ import argparse
 import datetime
 import os
 
-from deepctr_torch.inputs import DenseFeat, SparseFeat, get_feature_names
+from deepctr_torch.inputs import SparseFeat, get_feature_names
 from deepctr_torch.models import DeepFM
 from sklearn.metrics import log_loss, roc_auc_score
 from sklearn.model_selection import train_test_split
@@ -33,7 +33,7 @@ def main(config: dict, logger) -> None:
             vocabulary_size=avazu_dataset.data[feat].max() + 1,
             embedding_dim=config["embedding_dim"],
         )
-        for feat in avazu_dataset.CAT_FEATURE_NAMES
+        for feat in avazu_dataset.CAT_FEATURES
     ]
 
     dnn_feature_columns = fixlen_feature_columns
@@ -75,7 +75,7 @@ def main(config: dict, logger) -> None:
 
     history = model.fit(
         train_model_input,
-        avazu_train[avazu_dataset.TARGET_COLUMN].values,
+        avazu_train[avazu_dataset.TARGET].values,
         batch_size=config["batch_size"],
         epochs=config["epochs"],
         verbose=2,  # 0 for non, 1 for progress bar, 2 for every epoch
@@ -84,10 +84,8 @@ def main(config: dict, logger) -> None:
     pred_ans = model.predict(test_model_input, batch_size=256)
 
     # Performance metrics
-    loss = round(log_loss(avazu_test[avazu_dataset.TARGET_COLUMN].values, pred_ans), 4)
-    roc_auc = round(
-        roc_auc_score(avazu_test[avazu_dataset.TARGET_COLUMN].values, pred_ans), 4
-    )
+    loss = round(log_loss(avazu_test[avazu_dataset.TARGET].values, pred_ans), 4)
+    roc_auc = round(roc_auc_score(avazu_test[avazu_dataset.TARGET].values, pred_ans), 4)
 
     logger.info(f"TEST: BCE Loss: {loss} | ROC AUC: {roc_auc} ")
 
