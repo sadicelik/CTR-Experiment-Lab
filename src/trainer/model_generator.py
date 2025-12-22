@@ -5,7 +5,7 @@ import time
 import numpy as np
 import pandas as pd
 import torch
-from sklearn.metrics import accuracy_score, roc_auc_score
+from sklearn.metrics import roc_auc_score
 from torch.utils.data import DataLoader
 
 from ..dataset_class.avazu_dataset import AvazuCTRDataset
@@ -146,6 +146,7 @@ class ModelGenerator:
     def _train_one_epoch(self, train_loader: DataLoader = None):
         # Record epoch loss as the average of the batch losses
         epoch_loss = 0.0
+        epoch_roc_auc = 0.0
 
         # Set model to train mode
         self.model.train()
@@ -156,6 +157,10 @@ class ModelGenerator:
             out = self.model(x_train_batch)  # logits
             # Loss Calculation
             batch_loss = self.loss_function(out, y_train_batch)
+            # Score Calculation
+            batch_metrics = self._calculate_performance_metrics(
+                y_true=y_train_batch, y_pred=out, y_logits=out
+            )
             # Backward Pass
             self.optimizer.zero_grad()
             batch_loss.backward()
@@ -163,11 +168,13 @@ class ModelGenerator:
             self.optimizer.step()
             # Update epoch loss
             epoch_loss += batch_loss.item()
+            epoch_roc_auc += batch_metrics["ROC-AUC"]
 
         # One epoch of training complete, calculate average training epoch loss
         epoch_loss /= len(train_loader)
+        epoch_roc_auc /= len(train_loader)
 
-        return epoch_loss
+        return epoch_loss, epoch_roc_auc
 
     def train(self, train_dataset: AvazuCTRDataset):
         train_loader = DataLoader(
@@ -176,16 +183,20 @@ class ModelGenerator:
 
         # Metrics
         train_losses = []
+        train_roc_aucs = []
 
         self.logger.info(f"###################-STARTED TRAINING-###################")
 
         for epoch in range(1, self.epochs + 1):
-            train_epoch_loss = self._train_one_epoch(train_loader=train_loader)
+            train_epoch_loss, train_epoch_roc_auc = self._train_one_epoch(
+                train_loader=train_loader
+            )
             train_losses.append(train_epoch_loss)
+            train_roc_aucs.append(train_epoch_roc_auc)
 
             if self.verbose:
                 self.logger.info(
-                    f"TRAIN:\t Epoch: {epoch:3d} | BCE Loss: {train_epoch_loss:.5f} "
+                    f"TRAIN:\t Epoch: {epoch:3d} | BCE Loss: {train_epoch_loss:.5f} | ROC-AUC: {train_epoch_roc_auc:.5f}"
                 )
 
         self.logger.info(f"###################-FINISHED TRAINING-###################")
@@ -204,10 +215,7 @@ class ModelGenerator:
 
         # Metrics
         batch_losses = []
-        performance_metrics = {
-            "Accuracy": [],
-            "ROC-AUC": [],
-        }
+        performance_metrics = {"ROC-AUC": []}
 
         self.logger.info(f"###################-STARTED TESTING-###################")
 
@@ -231,12 +239,11 @@ class ModelGenerator:
                     performance_metrics[metric].append(value)
 
         test_loss = np.mean(batch_losses)
-        test_accuracy = np.mean(performance_metrics["Accuracy"])
         test_roc_auc = np.mean(performance_metrics["ROC-AUC"])
 
         if self.verbose:
             self.logger.info(
-                f"TEST:\t BCE Loss: {test_loss:.5f} | ROC AUC: {test_roc_auc:.5f} | Accuracy: {test_accuracy:.5f}"
+                f"TEST:\t BCE Loss: {test_loss:.5f} | ROC-AUC: {test_roc_auc:.5f}"
             )
 
         self.logger.info(f"###################-FINISHED TESTING-###################")
@@ -254,7 +261,6 @@ class ModelGenerator:
 
         # Scikit-learn performance metrics
         metrics = {}
-        metrics["Accuracy"] = accuracy_score(y_true=y_true, y_pred=y_pred)
         metrics["ROC-AUC"] = roc_auc_score(y_true=y_true, y_score=y_logits)
 
         return metrics

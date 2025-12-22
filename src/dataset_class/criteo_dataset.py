@@ -1,8 +1,11 @@
 import os
 
 import pandas as pd
+import torch
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from torch.utils.data import Dataset
+
+from ..utils.torch_utils import get_device
 
 
 class CriteoDataset(Dataset):
@@ -40,8 +43,10 @@ class CriteoDataset(Dataset):
         self.data = None
         self.sample_size = sample_size
         self.seed = seed
+        self.device = None
 
         self.load_data()
+        self.init()
         self.preprocess()
 
         if self.sample_size:
@@ -54,6 +59,23 @@ class CriteoDataset(Dataset):
             self.data_path, header=None, sep="\t", names=self.CRITEO_FEATURES
         )
         print(f"CriteoDataset: Loaded data from: {self.data_path}")
+
+    def init(self):
+        self.feature_names = list(self.data.columns)
+        self.n_samples = self.data.shape[0]
+        self.n_features = self.data.shape[1]
+        self.feature_unique_size = {}
+
+        self.device = get_device()
+        print(f"CriteoDataset: Tensors will be created on device {self.device}.")
+
+    def __len__(self):
+        return self.n_samples
+
+    def __getitem__(self, index):
+        return super().__getitem__(index)
+
+    ############################ DATA PREPROCESSING ############################
 
     def preprocess(self):
         print("CriteoDataset: Filling missing data...")

@@ -13,6 +13,7 @@ docs/
 papers/
 presentation/
 src/logs/*
+src/logs/optuna_studies/*
 
 # ================================
 # Files
