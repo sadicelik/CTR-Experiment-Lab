@@ -25,6 +25,10 @@ class AvazuCTRDataset(Dataset):
             Whether to drop the original id column.
         label_encode : bool, optional
             Whether to label encode categorical features.
+        sample_size : int, optional
+            Number of samples to use for training.
+        seed : int, optional
+            Random seed for reproducibility.
 
     Reference
     ---------
@@ -65,10 +69,12 @@ class AvazuCTRDataset(Dataset):
     def __init__(
         self,
         data_path: str,
-        drop_hour: bool = False,
-        parse_hour: bool = True,
-        drop_id: bool = False,
+        drop_hour: bool = True,
+        parse_hour: bool = False,
+        drop_id: bool = True,
         label_encode: bool = True,
+        sample_size: int = None,
+        seed: int = 1773,
     ) -> None:
 
         if not os.path.exists(data_path):
@@ -81,28 +87,22 @@ class AvazuCTRDataset(Dataset):
         self.load_data()
         self.init()
 
-        self.x = self.data.drop(columns=[self.TARGET_COLUMN])
-        self.y = self.data[self.TARGET_COLUMN]
-
         # Preprocessing
         self.drop_hour = drop_hour
         self.parse_hour = False if drop_hour else parse_hour
         self.drop_id = drop_id
         self.label_encode = label_encode
+        self.sample_size = sample_size
+        self.seed = seed
 
-        if self.drop_hour:
-            self.x.drop(columns=["hour"], inplace=True)
-            print("AvazuCTRDataset: Dropped original hour column.")
+        self.preprocess()
 
-        if self.parse_hour:
-            self.parse_avazu_hour()
+        if self.sample_size:
+            print(f"AvazuCTRDataset: Sampling {self.sample_size} rows from the dataset")
+            self.data = self.data.sample(n=self.sample_size, random_state=self.seed)
 
-        if self.drop_id:
-            self.x.drop(columns=["id"], inplace=True)
-            print("AvazuCTRDataset: Dropped original id column.")
-
-        if label_encode:
-            self.label_encoding()
+        self.x = self.data.drop(columns=[self.TARGET_COLUMN])
+        self.y = self.data[self.TARGET_COLUMN]
 
         self.field_dims = self._get_field_dims()
 
@@ -134,35 +134,50 @@ class AvazuCTRDataset(Dataset):
 
     ############################ DATA PREPROCESSING ############################
 
+    def preprocess(self) -> None:
+        if self.drop_hour:
+            self.data.drop(columns=["hour"], inplace=True)
+            print("AvazuCTRDataset: Dropped original hour column.")
+
+        if self.parse_hour:
+            self.parse_avazu_hour()
+
+        if self.drop_id:
+            self.data.drop(columns=["id"], inplace=True)
+            print("AvazuCTRDataset: Dropped original id column.")
+
+        if self.label_encode:
+            self.label_encoding()
+
     def parse_avazu_hour(self, drop_hour: bool = True) -> None:
         """
         Avazu "hour" is YYMMDDHH as int. Example: 14102100 -> 2014-10-21 00:00
         """
         # Datetime conversion and parsing for hour feature
-        self.x["hour"] = pd.to_datetime(
-            self.x["hour"], format="%y%m%d%H", errors="coerce", utc=True
+        self.data["hour"] = pd.to_datetime(
+            self.data["hour"], format="%y%m%d%H", errors="coerce", utc=True
         )
 
         # No need for year and month here, all records are in October, 2014
         # And also for day because we are training with days from past to predict a future day
-        # self.x["day"] = self.x["hour"].dt.day
-        # self.x["weekday"] = self.x["hour"].dt.weekday
-        self.x["hour_of_day"] = self.x["hour"].dt.hour
+        # self.data["day"] = self.data["hour"].dt.day
+        # self.data["weekday"] = self.data["hour"].dt.weekday
+        self.data["hour_of_day"] = self.data["hour"].dt.hour
 
         print(f"AvazuCTRDataset: Parsed hour into hour_of_day")
 
         if drop_hour:
-            self.x.drop(columns=["hour"], inplace=True)
+            self.data.drop(columns=["hour"], inplace=True)
             print("AvazuCTRDataset: Dropped original hour column.")
 
     def label_encoding(self) -> None:
         """Label encoding categorical features."""
-        for feature in tqdm(self.x.columns):
+        for feature in tqdm(self.data.columns):
             lbe = LabelEncoder()
-            self.x[feature] = lbe.fit_transform(self.x[feature])
+            self.data[feature] = lbe.fit_transform(self.data[feature])
 
         print(
-            f"AvazuCTRDataset: Label encoded categorical features {list(self.x.columns)}."
+            f"AvazuCTRDataset: Label encoded categorical features {list(self.data.columns)}."
         )
 
     def _get_field_dims(self):
