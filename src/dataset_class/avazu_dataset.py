@@ -2,6 +2,7 @@ import os
 
 import pandas as pd
 import torch
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from torch.utils.data import Dataset
 from tqdm import tqdm
@@ -23,14 +24,12 @@ class AvazuCTRDataset(Dataset):
             Whether to parse the hour column.
         drop_id : bool, optional
             Whether to drop the original id column.
-        label_encode : bool, optional
-            Whether to label encode categorical features.
         sample_size : int, optional
-            Number of samples to use for training.
+            Number of samples selected out from the dataset.
         seed : int, optional
             Random seed for reproducibility.
 
-    Reference
+    References
     ---------
         https://www.kaggle.com/c/avazu-ctr-prediction
     """
@@ -67,60 +66,54 @@ class AvazuCTRDataset(Dataset):
 
     def __init__(
         self,
-        data_path: str,
+        data_path: str = None,
+        is_preprocess: bool = True,
         drop_hour: bool = True,
         parse_hour: bool = False,
         drop_id: bool = True,
-        label_encode: bool = True,
         sample_size: int = None,
         seed: int = 1773,
+        test_size: float = None,
     ) -> None:
-
-        if not os.path.exists(data_path):
-            raise FileNotFoundError(data_path)
-
         # Initialization
         self.data_path = data_path
-        self.data = None
         self.device = self._get_device()
-        self.load_data()
-        self.init()
-
-        # Preprocessing
+        self.is_preprocess = is_preprocess
         self.drop_hour = drop_hour
         self.parse_hour = False if drop_hour else parse_hour
         self.drop_id = drop_id
-        self.label_encode = label_encode
         self.sample_size = sample_size
         self.seed = seed
+        self.test_size = test_size
 
-        self.preprocess()
+        self.load_data()
+
+        if self.is_preprocess:
+            self.preprocess()
 
         if self.sample_size:
             print(f"AvazuCTRDataset: Sampling {self.sample_size} rows from the dataset")
-            self.data = self.data.sample(n=self.sample_size, random_state=self.seed)
+            sampled_data = self.data.sample(n=self.sample_size, random_state=self.seed)
+            self.data = sampled_data.reset_index(drop=True)
 
-        self.x = self.data.drop(columns=[self.TARGET])
-        self.y = self.data[self.TARGET]
+            data_fpath = os.path.join(
+                "data", "avazu", f"avazu_sample_{self.sample_size}.csv"
+            )
+            self.data.to_csv(data_fpath, index=False)
+            print(f"AvazuCTRDataset: Saved sampled data to: {data_fpath}")
 
-        self.field_dims = self._get_field_dims()
+        if self.test_size:
+            self.record_train_test_split()
 
-        self.x = self.x.values
-        self.y = self.y.values
+        self.prepare()
 
     def load_data(self) -> None:
         print(f"AvazuCTRDataset: Loading data from: {self.data_path}")
         self.data = pd.read_csv(self.data_path)
         print(f"AvazuCTRDataset: Loaded data from: {self.data_path}")
 
-    def init(self) -> None:
-        self.feature_names = list(self.data.columns)
-        self.n_samples = self.data.shape[0]
-        self.n_features = self.data.shape[1]
-        self.feature_unique_size = {}
-
     def __len__(self) -> int:
-        return self.n_samples
+        return self.data.shape[0]
 
     def __getitem__(self, index: int):
         x = torch.tensor(
@@ -134,6 +127,7 @@ class AvazuCTRDataset(Dataset):
     ############################ DATA PREPROCESSING ############################
 
     def preprocess(self) -> None:
+        """Preprocessing operations."""
         if self.drop_hour:
             self.data.drop(columns=["hour"], inplace=True)
             print("AvazuCTRDataset: Dropped original hour column.")
@@ -145,8 +139,7 @@ class AvazuCTRDataset(Dataset):
             self.data.drop(columns=["id"], inplace=True)
             print("AvazuCTRDataset: Dropped original id column.")
 
-        if self.label_encode:
-            self.label_encoding()
+        self.label_encoding()
 
     def parse_avazu_hour(self, drop_hour: bool = True) -> None:
         """
@@ -171,6 +164,8 @@ class AvazuCTRDataset(Dataset):
 
     def label_encoding(self) -> None:
         """Label encoding categorical features."""
+        print(f"AvazuCTRDataset: Label encoding categorical features.")
+
         for feature in tqdm(self.CAT_FEATURES):
             lbe = LabelEncoder()
             self.data[feature] = lbe.fit_transform(self.data[feature])
@@ -186,6 +181,17 @@ class AvazuCTRDataset(Dataset):
 
         return self.feature_unique_size.values()
 
+    def prepare(self):
+        """Sets x,y and field_dims values for the model."""
+        self.x = self.data.drop(columns=[self.TARGET])
+        self.y = self.data[self.TARGET]
+
+        self.feature_unique_size = {}
+        self.field_dims = self._get_field_dims()
+
+        self.x = self.x.values
+        self.y = self.y.values
+
     ############################ HELPER FUNCTIONS ############################
 
     @staticmethod
@@ -194,3 +200,20 @@ class AvazuCTRDataset(Dataset):
         device = get_device()
         print(f"AvazuCTRDataset: Tensors will be created on device {device}.")
         return device
+
+    def record_train_test_split(self):
+        print(f"AvazuCTRDataset: Splitting data into train and test sets.")
+        avazu_train, avazu_test = train_test_split(
+            self.data, test_size=self.test_size, random_state=self.seed
+        )
+        train_fpath = os.path.join(
+            "data", "avazu", f"avazu_train_{len(avazu_train)}_{self.seed}.csv"
+        )
+        test_fpath = os.path.join(
+            "data", "avazu", f"avazu_test_{len(avazu_test)}_{self.seed}.csv"
+        )
+        avazu_train.to_csv(train_fpath, index=False)
+        avazu_test.to_csv(test_fpath, index=False)
+
+        print(f"AvazuCTRDataset: Saved train data to: {train_fpath}")
+        print(f"AvazuCTRDataset: Saved test data to: {test_fpath}")

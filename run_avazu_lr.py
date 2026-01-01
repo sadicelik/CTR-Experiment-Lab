@@ -5,22 +5,48 @@ from src.trainer.model_generator import ModelGenerator
 from src.utils.constants import LOGS_PATH
 from src.utils.logging_utils import *
 
+MODEL_NAME = "lr"
+SAMPLE_SIZE = 1_000_000
+TEST_SIZE = 0.2
+EPOCHS = 10
+BATCH_SIZE = 512
+SEED = 1773
+
+
 if __name__ == "__main__":
-    avazu_train_path = os.path.join("data", "avazu", "avazu_train_800k.csv")
+
+    # avazu_train_dataset = AvazuCTRDataset(
+    #     data_path=os.path.join("data", "avazu", "train.csv"),
+    #     is_preprocess=False,
+    #     sample_size=1_000_000,
+    #     seed=SEED,
+    # )
+
+    # avazu_test_dataset = AvazuCTRDataset(
+    #     data_path=os.path.join("data", "avazu", "train.csv"),
+    #     is_preprocess=True,
+    #     sample_size=200_000,
+    #     seed=SEED,
+    # )
+
+    # ---------------------- MAIN ---------------------- #
+
     avazu_train_dataset = AvazuCTRDataset(
-        avazu_train_path, drop_hour=True, drop_id=True
+        data_path=os.path.join("data", "avazu", "avazu_sample_1000000.csv"),
+        is_preprocess=True,
     )
 
-    avazu_test_path = os.path.join("data", "avazu", "avazu_test_200k.csv")
-    avazu_test_dataset = AvazuCTRDataset(
-        data_path=avazu_test_path, drop_hour=True, drop_id=True
-    )
+    # avazu_train_dataset = AvazuCTRDataset(
+    #     data_path=os.path.join("data", "avazu", "avazu_sample_800000.csv"),
+    #     is_preprocess=False,
+    # )
 
-    MODEL_NAME = "lr"
+    # avazu_test_dataset = AvazuCTRDataset(
+    #     data_path=os.path.join("data", "avazu", "avazu_sample_200000.csv"),
+    #     is_preprocess=False,
+    # )
+
     FIELD_DIMS = avazu_train_dataset.field_dims
-    EPOCHS = 10
-    BATCH_SIZE = 512
-    SEED = 1773
 
     print(
         f"Total field dimensions of {len(avazu_train_dataset.field_dims)} features: {sum(avazu_train_dataset.field_dims)}"
@@ -28,7 +54,7 @@ if __name__ == "__main__":
 
     log_path = os.path.join(
         LOGS_PATH,
-        f"avazu_drop_id_hour_{MODEL_NAME}_epochs_{EPOCHS}_bs_{BATCH_SIZE}_seed_{SEED}.log",
+        f"avazu_{MODEL_NAME}_epochs_{EPOCHS}_bs_{BATCH_SIZE}_seed_{SEED}.log",
     )
     logger = setup_logger(log_path)
 
@@ -40,6 +66,6 @@ if __name__ == "__main__":
         seed=SEED,
         logger=logger,
     )
-    trainer.train_test(avazu_train_dataset, avazu_test_dataset)
+    trainer.train_test(avazu_train_dataset, avazu_train_dataset)
 
     close_logger(logger)

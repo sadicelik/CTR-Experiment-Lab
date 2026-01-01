@@ -6,9 +6,8 @@ import numpy as np
 import pandas as pd
 import torch
 from sklearn.metrics import roc_auc_score
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Dataset
 
-from ..dataset_class.avazu_dataset import AvazuCTRDataset
 from ..models.deepembed import DeepEmbed
 from ..models.fint import FINT
 from ..models.lr import LogisticRegression
@@ -176,7 +175,7 @@ class ModelGenerator:
 
         return epoch_loss, epoch_roc_auc
 
-    def train(self, train_dataset: AvazuCTRDataset):
+    def train(self, train_dataset: Dataset):
         train_loader = DataLoader(
             train_dataset, batch_size=self.batch_size, shuffle=True
         )
@@ -206,7 +205,7 @@ class ModelGenerator:
 
     ################################# TEST #################################
 
-    def test(self, test_dataset: AvazuCTRDataset, batch_size=None):
+    def test(self, test_dataset: Dataset, batch_size=None):
         test_loader = DataLoader(
             test_dataset, batch_size=len(test_dataset), shuffle=False
         )  # Use lenght of test dataset as the batch size
@@ -290,7 +289,7 @@ class ModelGenerator:
 
     ################################# TRAIN - TEST #################################
 
-    def train_test(self, train_dataset: AvazuCTRDataset, test_dataset: AvazuCTRDataset):
+    def train_test(self, train_dataset: Dataset, test_dataset: Dataset):
         self.train(train_dataset=train_dataset)
         self.test(test_dataset=test_dataset)
 
@@ -312,15 +311,11 @@ class ModelGenerator:
 
     def save_pt_model(self):
         """Save the trained PyTorch model into .pt file."""
-        os.makedirs(MODELS_PATH, exist_ok=True)
-
-        timestamp = int(time.time())
-        fname = f"{self.model_name}_{timestamp}"
-        fname += ".pt"
-        fpath = os.path.join(MODELS_PATH, fname)
+        model_path = os.path.join(
+            MODELS_PATH, f"{self.model_name}_{int(time.time())}.pt"
+        )
 
         # Save model state dict and metadata
-        torch.save({"model_state_dict": self.model.state_dict()}, fpath)
+        torch.save({"model_state_dict": self.model.state_dict()}, model_path)
 
-        if self.verbose:
-            print(f"MODEL GENERATOR: Model saved to {fname}")
+        print(f"Model saved to {os.path.basename(model_path)}")
