@@ -1,0 +1,9 @@
+{
+    "MODEL_NAME": "fm",
+    "SAMPLE_SIZE": 1000000,
+    "EMBED_DIM": 4,
+    "TEST_SIZE": 0.2,
+    "EPOCHS": 10,
+    "BATCH_SIZE": 512,
+    "SEED": 1773
+}

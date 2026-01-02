@@ -11,6 +11,7 @@ from torch.utils.data import DataLoader, Dataset
 from ..models.deepembed import DeepEmbed
 from ..models.deepfm import DeepFM
 from ..models.fint import FINT
+from ..models.fm import FM
 from ..models.lr import LogisticRegression
 from ..models.mlp import MLP
 from ..utils.constants import MODELS_PATH
@@ -114,6 +115,10 @@ class ModelGenerator:
             model = MLP(input_dim=self.mlp_input_dim, hidden_dims=self.mlp_hidden_dims)
         elif self.model_name == "lr":  # 800.000 samples, 23 features, 1 target
             model = LogisticRegression(field_dims=self.field_dims)
+        elif self.model_name == "fm":
+            model = FM(
+                field_dims=self.field_dims, embed_dim=self.embed_dim, reduce_sum=True
+            )
         elif self.model_name == "deep-embed":
             model = DeepEmbed(
                 field_dims=self.field_dims,

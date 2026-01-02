@@ -9,7 +9,7 @@ class FMLayer(nn.Module):
 
     References
     ----------
-    **[1]:** https://www.csie.ntu.edu.tw/~b97053/paper/Rendle2010FM.pdf
+    **[1]:** https://ieeexplore.ieee.org/document/5694074
     """
 
     def __init__(self, reduce_sum: bool = True):

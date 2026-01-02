@@ -9,7 +9,7 @@ from src.utils.logging_utils import *
 if __name__ == "__main__":
     # ---------------------- MAIN ---------------------- #
 
-    with open(os.path.join(CONFIGS_PATH, "avazu_deepfm.json"), "r") as f:
+    with open(os.path.join(CONFIGS_PATH, "avazu_fm.json"), "r") as f:
         config = json.load(f)
 
     avazu_train_dataset = AvazuCTRDataset(
@@ -41,25 +41,30 @@ if __name__ == "__main__":
 
     logger.info(f"Config: {json.dumps(config, indent=4)}")
 
-    # trainer = ModelGenerator(
-    #     model_name=config["MODEL_NAME"],
-    #     field_dims=FIELD_DIMS,
-    #     epochs=config["EPOCHS"],
-    #     batch_size=config["BATCH_SIZE"],
-    #     seed=config["SEED"],
-    #     logger=logger,
-    # )
+    # ---------------------- FM ---------------------- #
 
     trainer = ModelGenerator(
         model_name=config["MODEL_NAME"],
         field_dims=FIELD_DIMS,
         embed_dim=config["EMBED_DIM"],
-        mlp_hidden_dims=config["HIDDEN_DIMS"],
         epochs=config["EPOCHS"],
         batch_size=config["BATCH_SIZE"],
         seed=config["SEED"],
         logger=logger,
     )
+
+    # ---------------------- DeepFM ---------------------- #
+
+    # trainer = ModelGenerator(
+    #     model_name=config["MODEL_NAME"],
+    #     field_dims=FIELD_DIMS,
+    #     embed_dim=config["EMBED_DIM"],
+    #     mlp_hidden_dims=config["HIDDEN_DIMS"],
+    #     epochs=config["EPOCHS"],
+    #     batch_size=config["BATCH_SIZE"],
+    #     seed=config["SEED"],
+    #     logger=logger,
+    # )
 
     trainer.train_test(avazu_train_dataset, avazu_train_dataset)
 
