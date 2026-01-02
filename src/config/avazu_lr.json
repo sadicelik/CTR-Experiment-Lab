@@ -1,0 +1,8 @@
+{
+    "MODEL_NAME": "lr",
+    "SAMPLE_SIZE": 1000000,
+    "TEST_SIZE": 0.2,
+    "EPOCHS": 10,
+    "BATCH_SIZE": 512,
+    "SEED": 1773
+}

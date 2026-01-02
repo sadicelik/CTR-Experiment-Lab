@@ -19,5 +19,5 @@ class LinearLayer(nn.Module):
         x : torch.Tensor
             Tensor of size ``(batch_size, num_fields)`` eg. ``(512,23)``
         """
-        adjusted_x = x + self.offsets
+        adjusted_x = x + x.new_tensor(self.offsets).unsqueeze(0)
         return torch.sum(self.embedding(adjusted_x), dim=1) + self.bias
