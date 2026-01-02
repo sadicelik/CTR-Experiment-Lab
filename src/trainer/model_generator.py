@@ -9,6 +9,7 @@ from sklearn.metrics import roc_auc_score
 from torch.utils.data import DataLoader, Dataset
 
 from ..models.deepembed import DeepEmbed
+from ..models.deepfm import DeepFM
 from ..models.fint import FINT
 from ..models.lr import LogisticRegression
 from ..models.mlp import MLP
@@ -120,6 +121,15 @@ class ModelGenerator:
                 hidden_dims=self.mlp_hidden_dims,
                 dropout=self.droput,
                 output_layer=True,
+            )
+        elif self.model_name == "deepfm":
+            model = DeepFM(
+                field_dims=self.field_dims,
+                embed_dim=self.embed_dim,
+                hidden_dims=self.mlp_hidden_dims,
+                dropout=self.droput,
+                output_layer=True,
+                reduce_sum=True,
             )
         elif self.model_name == "fint":
             model = FINT(

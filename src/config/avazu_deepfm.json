@@ -1,0 +1,10 @@
+{
+    "MODEL_NAME": "deepfm",
+    "SAMPLE_SIZE": 1000000,
+    "EMBED_DIM": 4,
+    "HIDDEN_DIMS": [300, 300, 300],
+    "TEST_SIZE": 0.2,
+    "EPOCHS": 10,
+    "BATCH_SIZE": 512,
+    "SEED": 1773
+}

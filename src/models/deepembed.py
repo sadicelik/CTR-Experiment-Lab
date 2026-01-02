@@ -29,7 +29,7 @@ class DeepEmbed(nn.Module):
         self.embed_output_dim = len(field_dims) * embed_dim  # (23 * 16)
         # MLP layer
         self.mlp = MultiLayerPerceptronLayer(
-            self.embed_output_dim, hidden_dims, dropout, output_layer=output_layer
+            self.embed_output_dim, hidden_dims, dropout, output_layer
         )
 
     def forward(self, x: torch.Tensor):

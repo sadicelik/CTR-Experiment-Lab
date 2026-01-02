@@ -8,9 +8,14 @@ class LogisticRegression(nn.Module):
     """
     Logistic Regression (LR) model.
 
+    Parameters
+    ----------
+    field_dims : tuple of int
+        Number of fields in the input data.
+
     References
     ----------
-    https://static.googleusercontent.com/media/research.google.com/tr//pubs/archive/41159.pdf
+    **[1]:** https://static.googleusercontent.com/media/research.google.com/tr//pubs/archive/41159.pdf
     """
 
     def __init__(self, field_dims):
