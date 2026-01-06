@@ -14,6 +14,7 @@ from ..models.fint import FINT
 from ..models.fm import FM
 from ..models.lr import LogisticRegression
 from ..models.mlp import MLP
+from ..optim.helen import Helen
 from ..utils.constants import MODELS_PATH
 from ..utils.torch_utils import get_device, reset_weights
 
@@ -55,6 +56,7 @@ class ModelGenerator:
     def __init__(
         self,
         model_name: str,
+        optim_name: str,
         field_dims=None,
         embed_dim: int = None,
         fint_layers: int = None,
@@ -80,6 +82,7 @@ class ModelGenerator:
         self.droput = dropout
 
         # Trainer attributes
+        self.optim_name = optim_name
         self.lr = lr
         self.epochs = epochs
         self.batch_size = batch_size
@@ -108,7 +111,8 @@ class ModelGenerator:
             self.logger.info(f"MODEL GENERATOR: PyTorch: {self.model}")
 
     def init(self):
-        self.model, self.optimizer = self._init_model()
+        self.model = self._init_model()
+        self.optimizer = self._init_optim()
 
     def _init_model(self):
         if self.model_name == "mlp":  # 800.000 samples, 26 features
@@ -150,14 +154,33 @@ class ModelGenerator:
         # Reset parameters
         model.apply(reset_weights)
 
-        # Optimizer
-        optimizer = torch.optim.Adam(model.parameters(), lr=self.lr)
+        return model
 
-        return model, optimizer
+    def _init_optim(self):
+        if self.optim_name == "adam":
+            optimizer = torch.optim.Adam(self.model.parameters(), lr=self.lr)
+        elif self.optim_name == "helen":
+            embed_params = self.model.get_embed_params()
+            net_params = self.model.get_net_params()
+
+            optimizer = Helen(
+                embed_params,
+                net_params,
+                lr_embed=self.lr,
+                lr_net=self.lr,
+                rho=0.05,
+                net_pert=True,
+                bound=0.3,
+            )
+        else:
+            raise NotImplementedError
+
+        return optimizer
 
     ################################# TRAIN #################################
 
     def _train_one_epoch(self, train_loader: DataLoader = None):
+        """Train the model for one epoch using the given DataLoader."""
         # Record epoch loss as the average of the batch losses
         epoch_loss = 0.0
         epoch_roc_auc = 0.0
@@ -190,6 +213,45 @@ class ModelGenerator:
 
         return epoch_loss, epoch_roc_auc
 
+    def _helen_train_one_epoch(self, train_loader: DataLoader = None):
+        """Train the model for one epoch using the Helene optimizer."""
+        epoch_loss = 0.0
+        epoch_roc_auc = 0.0
+
+        self.model.train()
+
+        for _, (x_train_batch, y_train_batch) in enumerate(train_loader):
+            # Count the occurrence of each feature in the batch
+            self.optimizer.count_feature_occurrence(
+                X=x_train_batch,
+                feature_params_map=self.model.get_feature_params_map(),
+                feature_specs=self.model.feature_specs,
+            )
+
+            out = self.model(x_train_batch)  # logits
+            batch_loss = self.loss_function(out, y_train_batch)
+            batch_metrics = self._calculate_performance_metrics(
+                y_true=y_train_batch, y_pred=out, y_logits=out
+            )
+
+            # First forward-backward pass
+            self.optimizer.zero_grad()
+            batch_loss.backward()
+            self.optimizer.first_step(zero_grad=True)
+
+            # Second forward-backward pass
+            batch_loss = self.loss_function(out, y_train_batch)
+            batch_loss.backward()
+            self.optimizer.second_step()
+
+            epoch_loss += batch_loss.item()
+            epoch_roc_auc += batch_metrics["ROC-AUC"]
+
+        epoch_loss /= len(train_loader)
+        epoch_roc_auc /= len(train_loader)
+
+        return epoch_loss, epoch_roc_auc
+
     def train(self, train_dataset: Dataset):
         train_loader = DataLoader(
             train_dataset, batch_size=self.batch_size, shuffle=True
@@ -202,9 +264,14 @@ class ModelGenerator:
         self.logger.info(f"###################-STARTED TRAINING-###################")
 
         for epoch in range(1, self.epochs + 1):
-            train_epoch_loss, train_epoch_roc_auc = self._train_one_epoch(
-                train_loader=train_loader
-            )
+            if self.optim_name == "helen":
+                train_epoch_loss, train_epoch_roc_auc = self._helen_train_one_epoch(
+                    train_loader=train_loader
+                )
+            else:
+                train_epoch_loss, train_epoch_roc_auc = self._train_one_epoch(
+                    train_loader=train_loader
+                )
             train_losses.append(train_epoch_loss)
             train_roc_aucs.append(train_epoch_roc_auc)
 
