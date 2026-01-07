@@ -1,0 +1,8 @@
+{
+    "MODEL_NAME": "dcnv3",
+    "OPTIM_NAME": "adam",
+    "EMBED_DIM": 16,
+    "EPOCHS": 10,
+    "BATCH_SIZE": 512,
+    "SEED": 1773
+}

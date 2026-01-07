@@ -1,6 +1,6 @@
 {
     "MODEL_NAME": "deepfm",
-    "OPTIM_NAME": "helen",
+    "OPTIM_NAME": "adam",
     "SAMPLE_SIZE": 1000000,
     "EMBED_DIM": 4,
     "HIDDEN_DIMS": [300, 300, 300],

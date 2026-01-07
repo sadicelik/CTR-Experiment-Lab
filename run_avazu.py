@@ -9,7 +9,7 @@ from src.utils.logging_utils import *
 if __name__ == "__main__":
     # ---------------------- MAIN ---------------------- #
 
-    with open(os.path.join(CONFIGS_PATH, "avazu_deepfm.json"), "r") as f:
+    with open(os.path.join(CONFIGS_PATH, "avazu_dcnv3.json"), "r") as f:
         config = json.load(f)
 
     # avazu_train_dataset = AvazuCTRDataset(
@@ -56,12 +56,25 @@ if __name__ == "__main__":
 
     # ---------------------- DeepFM ---------------------- #
 
+    # trainer = ModelGenerator(
+    #     model_name=config["MODEL_NAME"],
+    #     optim_name=config["OPTIM_NAME"],
+    #     field_dims=FIELD_DIMS,
+    #     embed_dim=config["EMBED_DIM"],
+    #     mlp_hidden_dims=config["HIDDEN_DIMS"],
+    #     epochs=config["EPOCHS"],
+    #     batch_size=config["BATCH_SIZE"],
+    #     seed=config["SEED"],
+    #     logger=logger,
+    # )
+
+    # ---------------------- DCNv3 ---------------------- #
+
     trainer = ModelGenerator(
         model_name=config["MODEL_NAME"],
         optim_name=config["OPTIM_NAME"],
         field_dims=FIELD_DIMS,
         embed_dim=config["EMBED_DIM"],
-        mlp_hidden_dims=config["HIDDEN_DIMS"],
         epochs=config["EPOCHS"],
         batch_size=config["BATCH_SIZE"],
         seed=config["SEED"],

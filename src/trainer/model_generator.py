@@ -8,6 +8,7 @@ import torch
 from sklearn.metrics import roc_auc_score
 from torch.utils.data import DataLoader, Dataset
 
+from ..models.dcnv3 import DCNv3
 from ..models.deepembed import DeepEmbed
 from ..models.deepfm import DeepFM
 from ..models.fint import FINT
@@ -147,6 +148,18 @@ class ModelGenerator:
                 fint_layers=self.fint_layers,
                 hidden_dims=self.mlp_hidden_dims,
                 dropout=self.droput,
+            )
+        elif self.model_name == "dcnv3":
+            model = DCNv3(
+                field_dims=self.field_dims,
+                embedding_dim=16,
+                num_deep_cross_layers=4,
+                num_shallow_cross_layers=5,
+                deep_net_dropout=0,
+                shallow_net_dropout=0,
+                layer_norm=True,
+                batch_norm=True,
+                num_heads=4,
             )
         else:
             raise NotImplementedError
